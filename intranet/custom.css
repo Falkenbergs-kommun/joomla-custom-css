@@ -1,0 +1,1082 @@
+/* ==========================================================================
+   FALKENBERG INTRANET - CUSTOM STYLES
+   ========================================================================== */
+
+@import url(https://fonts.googleapis.com/icon?family=Material+Icons);
+
+/* ==========================================================================
+   BASE & TYPOGRAPHY
+   ========================================================================== */
+
+h3 {
+	word-break: auto-phrase;
+	hyphens: auto;
+}
+
+/* ==========================================================================
+   ACCESSIBILITY
+   ========================================================================== */
+
+a:focus, button:focus {
+	outline: 2px dotted #333 !important;
+}
+
+.sidebarmenu .uk-nav-default>li>a:focus,
+.sidebarmenu a:focus {
+	outline: 2px dotted #333 !important;
+}
+
+.ui-accordion-header-active:focus {
+	border-bottom: 2px dotted #333 !important;
+}
+
+/* ==========================================================================
+   NAVIGATION - OFFCANVAS & MOBILE
+   ========================================================================== */
+
+.uk-offcanvas-bar .uk-nav > li > a {
+	padding: 10px 20px;
+}
+
+.uk-navbar-toggle-icon {
+	color: #fff !important;
+}
+
+#module-menu-dialog-mobile .uk-nav-header {
+	font-weight: bold !important;
+	padding: 0;
+}
+
+#module-menu-dialog-mobile .uk-nav-header:not(:first-child) {
+	margin-top: 10px !important;
+}
+
+#module-menu-dialog-mobile .uk-nav-header ul {
+	font-weight: normal !important;
+}
+
+/* ==========================================================================
+   NAVIGATION - SIDEBAR MENU
+   ========================================================================== */
+
+/* Sidebar menu base styles */
+.sidebarmenu .uk-nav-default>li>a {
+	background: linear-gradient(to top, #3e3f5b, #3e3f5b) !important;
+	color: #FFF;
+	margin-bottom: 2px !important;
+	margin-left: 2px;
+	margin-right: 1px;
+	padding: 15px 0px 15px 10px !important;
+	max-width: 340px;
+	border: 1px solid #ccc;
+	border-color: RGBA(0,0,0,0.4) !important;
+	border-width: 0 1px 1px 1px !important;
+	box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset;
+	text-indent: 0px;
+}
+
+.sidebarmenu .uk-nav-default>li>a:hover {
+	background: linear-gradient(to top, #727494, #727494) !important;
+	color: #FFF;
+	border-bottom-color: rgba(0,0,0,0.7);
+}
+
+.sidebarmenu a {
+	color: #FFF;
+}
+
+/* Sidebar menu - active states */
+.sidebarmenu .uk-nav-default > li.uk-active > a {
+	background: linear-gradient(to top, #c36473, #c36473) !important;
+}
+
+.sidebarmenu .uk-open .uk-nav-sub li.uk-active > a {
+	text-decoration: underline;
+}
+
+.sidebarmenu .uk-nav-parent-icon .uk-nav-parent-icon > li.uk-active > a {
+	color: #FFF !important;
+	text-decoration: underline;
+}
+
+.sidebarmenu .uk-nav-parent-icon > li.uk-active.uk-open.uk-parent > a,
+.sidebarmenu .uk-nav-parent-icon > li.uk-active > a {
+	color: white !important;
+}
+
+.sidebarmenu .uk-active .uk-nav-parent-icon>.uk-parent.uk-open>a {
+	color: #d2d2d2 !important;
+}
+
+/* Sidebar menu - parent icons (expand/collapse) */
+.sidebarmenu .uk-nav-parent-icon>.uk-parent>a::after {
+	content: "";
+	width: 1.7em;
+	height: 1.7em;
+	float: right;
+	background-image: url(/images/plus.png);
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	margin-right: 15px;
+}
+
+.sidebarmenu .uk-nav-parent-icon>.uk-parent.uk-open>a::after {
+	background-image: url(/images/minus.png);
+}
+
+/* Sidebar submenu */
+.sidebarmenu ul.uk-nav-sub {
+	background: linear-gradient(to top, #616283, #616283);
+	margin-left: 2px;
+	margin-right: 1px;
+}
+
+.sidebarmenu .uk-nav-sub a {
+	color: #FFF !important;
+	padding: 10px 5px;
+}
+
+/* Custom navigation helpers */
+.uk-nav-custom, .uk-nav-customs {
+	margin-left: auto;
+}
+
+.uk-nav-custom::after, .uk-nav-customs::after {
+	content: "";
+	width: 1.7em;
+	height: 1.7em;
+	float: right;
+	background-image: url(/images/plus.png);
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	margin-right: 15px;
+}
+
+.uk-nav .uk-open .uk-nav-custom::after,
+.uk-nav-sub .uk-open .uk-nav-customs::after {
+	background-image: url(/images/minus.png);
+}
+
+.uk-nav-default > li > a:hover {
+	background-color: #fff;
+}
+
+/* Navbar dropdown navigation */
+.uk-navbar-dropdown-nav .uk-nav-sub li.uk-active > a {
+	text-decoration: underline;
+}
+
+/* General nav parent icons */
+.uk-navbar-dropdown .uk-nav-parent-icon > .uk-parent > a::after,
+.tm-toolbar-default .uk-nav-parent-icon > .uk-parent > a::after,
+.uk-card-secondary.uk-card-body .uk-nav-parent-icon > .uk-parent > a::after,
+.uk-card-secondary > :not([class*="uk-card-media"]) .uk-nav-parent-icon > .uk-parent > a::after,
+.uk-light .uk-nav-parent-icon > .uk-parent > a::after,
+.uk-navbar-container:not(.uk-navbar-transparent) .uk-nav-parent-icon > .uk-parent > a::after,
+.uk-overlay-primary .uk-nav-parent-icon > .uk-parent > a::after,
+.uk-section-secondary:not(.uk-preserve-color) .uk-nav-parent-icon > .uk-parent > a::after,
+.uk-tile-primary:not(.uk-preserve-color) .uk-nav-parent-icon > .uk-parent > a::after,
+.uk-tile-secondary:not(.uk-preserve-color) .uk-nav-parent-icon > .uk-parent > a::after {
+	background-image: url(/images/plus.png);
+}
+
+.uk-navbar-dropdown .uk-nav-parent-icon > .uk-parent.uk-open > a::after,
+.tm-toolbar-default .uk-nav-parent-icon > .uk-parent.uk-open > a::after,
+.uk-card-secondary.uk-card-body .uk-nav-parent-icon > .uk-parent.uk-open > a::after,
+.uk-card-secondary > :not([class*="uk-card-media"]) .uk-nav-parent-icon > .uk-parent.uk-open > a::after,
+.uk-light .uk-nav-parent-icon > .uk-parent.uk-open > a::after,
+.uk-navbar-container:not(.uk-navbar-transparent) .uk-nav-parent-icon > .uk-parent.uk-open > a::after,
+.uk-overlay-primary .uk-nav-parent-icon > .uk-parent.uk-open > a::after,
+.uk-section-secondary:not(.uk-preserve-color) .uk-nav-parent-icon > .uk-parent.uk-open > a::after,
+.uk-tile-primary:not(.uk-preserve-color) .uk-nav-parent-icon > .uk-parent.uk-open > a::after,
+.uk-tile-secondary:not(.uk-preserve-color) .uk-nav-parent-icon > .uk-parent.uk-open > a::after {
+	background-image: url(/images/minus.png);
+}
+
+.uk-modal-body .uk-nav-default > li.uk-active > a {
+	color: #2253f4 !important;
+}
+
+.uk-nav li.js-accordion .uk-icon {
+	padding-right: 10px;
+}
+/* ==========================================================================
+   ACCORDIONS
+   ========================================================================== */
+
+.uk-accordion {
+	margin-top: 20px !important;
+	margin-bottom: 20px !important;
+}
+
+.uk-accordion-title {
+	padding: 13px 10px 13px 0px !important;
+	border: 1px solid #d3d8e2 !important;
+	position: relative;
+	width: auto;
+	margin-top: 5px;
+	background-color: #F6F9FC;
+	font-weight: 700 !important;
+	display: flex;
+}
+
+.uk-accordion-title:hover {
+	text-decoration: underline;
+}
+
+.uk-accordion-title span,
+.uk-accordion-title span a,
+.uk-accordion-title span a:visited,
+.uk-accordion-title span a:hover,
+.uk-accordion-title span a:active {
+	color: #000;
+	display: flex;
+	text-decoration: none;
+}
+
+a.uk-accordion-title {
+	text-decoration: none !important;
+}
+
+.uk-accordion-title > h2, h3, h4 {
+	margin: auto 0px;
+}
+
+/* Accordion icons */
+.uk-accordion-title::before {
+	background-color: #000 !important;
+	mask: url("https://intranet.falkenberg.se/images/plus-down.svg") no-repeat 50% 50%;
+	mask-size: 100% !important;
+	width: 24px;
+	height: 24px;
+	transform: rotate(0);
+	transition: transform 250ms linear;
+	background-image: none;
+	float: left;
+	margin-right: 15px;
+}
+
+.uk-open > .uk-accordion-title::before {
+	mask: url("https://intranet.falkenberg.se/images/plus-up.svg") no-repeat 50% 50%;
+	mask-size: auto;
+	transform: rotate(360deg);
+	transition: transform 250ms linear;
+	background-image: none;
+}
+
+/* Accordion content */
+.uk-accordion-content {
+	border: 1px solid #d3d8e2 !important;
+	border-top: none !important;
+	padding: 20px !important;
+	margin-top: 0px !important;
+	height: auto !important;
+}
+
+/* Accordion color variants */
+.uk-section-secondary .uk-accordion-title {
+	background-color: #183c77 !important;
+}
+
+.uk-section-primary .uk-accordion-title {
+	background-color: #b35f6a !important;
+}
+
+.uk-section-primary .uk-accordion-title h3 {
+	color: #fff !important;
+}
+
+.uk-section-primary .uk-accordion-title::before {
+	background-color: #fff !important;
+}
+
+/* Accordion icons in dark contexts */
+.tm-toolbar-default .uk-accordion-title::before,
+.uk-card-secondary.uk-card-body .uk-accordion-title::before,
+.uk-card-secondary > :not([class*="uk-card-media"]) .uk-accordion-title::before,
+.uk-light .uk-accordion-title::before,
+.uk-overlay-primary .uk-accordion-title::before,
+.uk-section-secondary:not(.uk-preserve-color) .uk-accordion-title::before,
+.uk-tile-primary:not(.uk-preserve-color) .uk-accordion-title::before,
+.uk-tile-secondary:not(.uk-preserve-color) .uk-accordion-title::before,
+.uk-light .ui-accordion-header-icon,
+.uk-section-secondary .ui-accordion-header-icon {
+	content: url(/images/interface/add_circle_outline_petrol_inv.svg) !important;
+}
+
+/* jQuery UI accordion styles */
+.ui-accordion-header-icon {
+	content: url(/images/interface/add_circle_outline_petrol.svg);
+	margin-left: 0px;
+	margin-right: 5px;
+	float: left;
+	background-image: none !important;
+	margin-top: auto;
+	margin-bottom: auto;
+	width: 30px;
+}
+
+.ui-accordion-header-active .ui-accordion-header-icon {
+	content: url(/images/interface/remove_circle_outline_petrol.svg);
+	margin-left: 0px;
+	margin-right: 10px;
+	float: left;
+	background-image: none !important;
+	margin-top: auto;
+	margin-bottom: auto;
+	width: 30px;
+}
+
+/* Verksamhetsinformation accordion variant */
+.verksamhetsinformation .uk-accordion-title::before {
+	content: url(/images/interface/add_circle_outline_pink.svg);
+	margin-left: 0px;
+	margin-right: 10px;
+	vertical-align: middle !important;
+	float: left;
+	background-image: none !important;
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+/* jaccordion variant */
+.jaccortion .uk-accordion-title::before {
+	font-size: 17px;
+}
+
+.jaccortion h3 {
+	margin-bottom: 10px;
+}
+
+.jaccortion .uk-accordion-content {
+	margin-bottom: 20px;
+}
+
+/* ==========================================================================
+   NAVIGATION - SPECIAL MENU VARIANTS
+   ========================================================================== */
+
+/* Falkmenu variant */
+.falkmenu {
+	padding-left: 30px !important;
+	background: #727494;
+	margin-left: 2px !important;
+	margin-right: 1px !important;
+}
+
+.falkmenu .sidebarmenu .uk-nav-parent-icon>.uk-parent.uk-open>a {
+	background: none !important;
+}
+
+/* Bare menu variant (transparent) */
+.bare .uk-nav-default > li > a {
+	border: 0px solid #ccc;
+	background-color: transparent !important;
+}
+
+.bare .falkmenu {
+	background: transparent;
+}
+
+.bare .uk-nav-parent-icon > .uk-parent > a::after {
+	background-image: url(/images/interface/plus-dark.png) !important;
+}
+
+/* Menykarta variant */
+.menykarta .uk-nav-default > li > a {
+	background: transparent;
+	border: none;
+}
+
+.menykarta .uk-nav-default > li > a:hover {
+	background: transparent;
+	border: none;
+}
+
+.menykarta .uk-nav-parent-icon > .uk-parent > a::after {
+	background-image: url(/images/interface/plus-dark.png) !important;
+}
+
+.menykarta .uk-nav-parent-icon > .uk-parent.uk-open > a::after {
+	background-image: url(/images/interface/minus-dark.png) !important;
+}
+
+/* ==========================================================================
+   EDITOR - TINYMCE CUSTOMIZATION
+   ========================================================================== */
+
+/* Hide specific TinyMCE elements */
+div#mceu_2, div#mceu_6, div#mceu_7, div#mceu_8,
+div#mceu_11, div#mceu_15, div#mceu_16, div#mceu_17 {
+	display: none !important;
+}
+
+.mceBranding {
+	display: none !important;
+}
+
+/* ==========================================================================
+   TOPBAR & HEADER
+   ========================================================================== */
+
+.topbar_icon {
+	background: #616283;
+}
+
+@media only screen and (min-width: 960px) {
+	.topbar_icon {
+		background: #616283;
+		background-image: url(/images/toolbar_bg.png);
+	}
+}
+
+.topbar_icon .es-toolbar__item--action .es-toolbar__link {
+	border: none !important;
+}
+
+.topbar_icon .o-nav__item {
+	padding: 10px 0px 5px 0px !important;
+}
+
+h1.main-head-element {
+	margin-top: -70px;
+}
+
+h1.wave::before {
+	content: "👋  ";
+	font-size: 40px;
+}
+
+.uk-heading-line>::after {
+	margin-top: 3px;
+}
+
+.uk-heading-bullet2 {
+	border-left: 5px solid #C5E4DF;
+	padding-left: 10px;
+	margin-bottom: 10px;
+}
+
+/* ==========================================================================
+   SECTIONS & PANELS
+   ========================================================================== */
+
+/* Hyphenation for text inside panels */
+.uk-panel p,
+.uk-panel div,
+.uk-panel h1,
+.uk-panel h2,
+.uk-panel h3,
+.uk-panel h4,
+.uk-panel h5,
+.uk-panel h6 {
+	hyphens: auto;
+	overflow-wrap: break-word;
+}
+
+.sectop {
+	padding: 40px;
+	box-shadow: 0px 0px 19px 2px rgba(0,0,0,0.10);
+	border-radius: 10px;
+}
+
+.sectop-blue {
+	padding: 40px;
+	background: rgb(37,38,54);
+	background: linear-gradient(0deg, rgba(37,38,54,1) 0%, rgba(62,63,91,1) 100%);
+	box-shadow: 0px 0px 19px 2px rgba(0,0,0,0.10);
+	border-radius: 10px;
+}
+
+.land-top {
+	background: #252637 !important;
+}
+
+.darkm, .darkbox {
+	background: #3e3f5b !important;
+}
+
+.process-2 {
+	background: #363750;
+}
+
+.process-nav {
+	border-right: 0px solid;
+}
+
+/* ==========================================================================
+   ALERTS & NOTIFICATIONS
+   ========================================================================== */
+
+.uk-alert.observeraruta, .observera2025 {
+	color: #000;
+	background: #edafb8;
+	background-color: #ffd000;
+}
+
+.uk-alert.chefsinfo {
+	background: #204e99;
+	color: #FFF;
+}
+
+.uk-alert.dekorationsbox {
+	background: #EEE !important;
+}
+
+.uk-alert h2 {
+	margin-bottom: -25px !important;
+}
+
+.uk-alert .uk-content {
+	margin-top: 0px !important;
+}
+
+.cta, .ctaruta2025 {
+	background: #edafb8 !important;
+	color: #000;
+	padding: 0px 0px 10px 30px;
+	background-color: #13153B;
+}
+
+/* ==========================================================================
+   BUTTONS
+   ========================================================================== */
+
+.bwide .uk-button {
+	width: 100% !important;
+	padding-bottom: 2px;
+}
+
+.cust-but .uk-button-large {
+	line-height: 61px !important;
+}
+
+.step-2-button .uk-button {
+	background: #252637 !important;
+	color: #FFF;
+}
+
+.es-component .uk-icon-button {
+	color: #000 !important;
+}
+
+.greet button.uk-button.uk-button-primary {
+	display: none;
+}
+
+.uk-panel.greet {
+	font-size: 30px;
+	color: #FFF;
+	padding-top: 25px;
+}
+
+/* ==========================================================================
+   CARDS
+   ========================================================================== */
+
+.news {
+	background: #fff;
+	padding: 20px;
+}
+
+.news .uk-card-default {
+	background: #FFF !important;
+	border: 1px solid #ddd !important;
+	border-radius: 0px !important;
+	box-shadow: 0px 1px 15px rgba(0,0,0,0.07);
+}
+
+.app-picker {
+	background: #FFF !important;
+	box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* ==========================================================================
+   TABLES
+   ========================================================================== */
+
+.uk-table th {
+	color: #FFF;
+}
+
+thead {
+	background: #1f4e99;
+	color: #FFF;
+	font-weight: bold;
+}
+
+tbody {
+	border: 1px solid #DDD;
+}
+
+tr {
+	border-bottom: 1px solid #DDD;
+}
+
+/* Table captions */
+.uk-table caption {
+	font-family: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+	font-size: 19px;
+	font-weight: 600;
+	line-height: 1.3;
+}
+
+/* ==========================================================================
+   LISTS
+   ========================================================================== */
+
+.el-item {
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.intranet li {
+	width: 100%;
+	float: left;
+	padding: 10px 0px;
+	border-bottom: 1px solid #ddd;
+}
+
+/* URL lists with chevron icons */
+li.el-item.url-list {
+	padding: 10px 30px;
+}
+
+.url-list .el-content.uk-panel {
+	display: inline;
+	left: -30px;
+	padding-left: 10px;
+}
+
+.uk-list-chevron>::before {
+	position: relative;
+	top: 3px;
+	left: -30px;
+	width: 30px;
+	vertical-align: middle;
+	margin-right: 10px;
+	margin-top: 0px;
+	height: 1.7em;
+	margin-bottom: -1.7em;
+	content: url(/../../../../images/interface/chevron.svg);
+}
+
+/* Docman lists */
+li.el-item.docman-list {
+	padding: 10px 30px 10px 30px;
+}
+
+li.el-item.docman-list::before {
+	position: relative;
+	top: 3px;
+	left: -30px;
+	width: 30px;
+	vertical-align: middle;
+	margin-right: 0px;
+	margin-top: 0px;
+	height: 1.7em;
+	margin-bottom: -1.7em;
+	content: url(/../../../../images/interface/chevron.svg);
+}
+
+.docman-list .el-content.uk-panel {
+	padding-left: 10px;
+}
+
+/* Add space before file size in docman links */
+a.doclink-insert span:last-of-type::before,
+a.doclink span:last-of-type::before {
+	content: "\00a0";
+}
+
+/* News list */
+.news-list a.uk-link-text {
+	display: none !important;
+}
+
+.news-list .uk-text-meta {
+	font-size: 12px;
+	color: #000;
+}
+
+.news-list .el-content {
+	margin-bottom: -35px !important;
+	font-size: 14px;
+}
+	
+/* ==========================================================================
+   SEARCH FUNCTIONALITY
+   ========================================================================== */
+
+#jp_search_word_155 {
+	height: 50px !important;
+	border: 2px solid #3e4059 !important;
+	border-radius: 0px;
+}
+
+.jp_search_input {
+	width: 400px !important;
+}
+
+#jp_search_res_div {
+	z-index: 999;
+}
+
+.jp_search_right .dropdownsearch {
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.es-snackbar__title {
+	font-size: 20px !important;
+	font-weight: bold !important;
+	padding-bottom: 5px;
+}
+
+.es-snackbar__title::before {
+	content: url(/images/interface/search.svg);
+}
+
+/* ==========================================================================
+   EASYSOCIAL - SOCIAL MENU
+   ========================================================================== */
+
+.social-menu {
+	max-width: 140px !important;
+	float: right !important;
+}
+
+.social-menu#es .es-toolbar {
+	background: transparent;
+	border: none !important;
+}
+
+.social-menu#es .es-toolbar__item--home-submenu .es-toolbar__link {
+	display: none !important;
+}
+
+.social-menu .es-toolbar__item es-toolbar__item--home-submenu,
+.social-menu .es-toolbar__item es-toolbar__item--home {
+	padding: 0px !important;
+}
+
+.social-menu#es .es-toolbar__dropdown-menu {
+	max-width: 300px !important;
+	width: 300px !important;
+}
+
+.social-menu#es .t-lg-mb--lg {
+	margin-bottom: 0px !important;
+}
+
+.social-menu#es i {
+	width: 36px;
+	height: 36px;
+}
+
+.social-menu#es .es-toolbar__link {
+	padding: 0px 0px;
+}
+
+.social-menu#es .es-toolbar__item--home {
+	display: none;
+}
+
+.social-menu#es .es-toolbar__item--home+.es-toolbar__item--home-submenu {
+	display: none;
+}
+
+.social-menu#es .es-toolbar__link.has-avatar:before {
+	right: -10px;
+}
+
+.social-menu#es .es-toolbar__link-bubble {
+	display: none;
+	position: absolute;
+	color: #fff;
+	background-color: #f65b5b;
+	top: 0;
+	left: auto;
+	right: -2px;
+	min-width: 15px;
+	height: 15px;
+	overflow: hidden;
+	border-radius: 13px;
+	text-align: center;
+	font-size: 10px;
+	line-height: 14px;
+	font-weight: bold;
+	padding: 0 2px;
+}
+
+/* ==========================================================================
+   EASYSOCIAL - GENERAL STYLES
+   ========================================================================== */
+
+#es .es-create-category-select .btn {
+	color: #000;
+}
+
+#es .es-toolbar__item--action .dropdown_ {
+	position: static;
+	padding-left: 5px;
+}
+
+#es .es-toolbar__item--action .es-toolbar__o-nav>*+* {
+	margin-left: 0.5rem;
+}
+
+#es .es-toolbar__search-input {
+	height: 33px;
+	border-top: 1px solid white;
+}
+
+#es .o-nav--stacked .o-nav__item {
+	padding: 5px 0;
+}
+
+#es .o-avatar-v2--xl {
+	width: 100px !important;
+	height: 100px !important;
+}
+
+#es .es-container__sidebar {
+	width: 300px !important;
+	flex: 0 0 300px;
+}
+
+#es .es-cards--2 .es-cards__item {
+	margin: 10px 0px;
+}
+
+#es .es-create-category-select .btn-wrap__toggle {
+	color: #1f4e99 !important;
+	position: absolute;
+	bottom: 20px;
+	width: calc(100% - 16px);
+	text-align: center !important;
+	cursor: pointer;
+	font-weight: bold;
+	margin-left: 7px;
+}
+
+#es .es-input-smiley {
+	display: none;
+}
+
+/* EasySocial - hide specific UI elements */
+body #es.mod-es-sidebar-groups li[data-filter-item][data-type="nearby"],
+body #es.mod-es-sidebar-groups li[data-filter-item][data-type="unpublished"],
+body #es.mod-es-sidebar-friends li[data-filter-item][data-type="pending"],
+body #es.mod-es-sidebar-friends li[data-filter-item][data-type="request"] {
+	display: none;
+}
+
+body #es .es-stream-preview .is-link .es-stream-embed__cover {
+	display: none;
+}
+
+#remove-thumbnail,
+input #remove-thumbnail.o-checkbox {
+	display: none !important;
+}
+
+/* EasySocial - sidebar and widgets */
+.es-modules-wrap.es-modules-es-sidebar {
+	background: #f9f9f9;
+	padding: 12px;
+	border: 1px solid #DDD;
+}
+
+.recent-files .o-nav--stacked .o-nav__item {
+	border-bottom: 1px solid #DDD;
+}
+
+.recent-files.es-side-widget__bd li a {
+	display: block;
+	width: 200px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+/* EasySocial - button groups */
+.o-btn-group.open {
+	background: #252637 !important;
+}
+
+#es .o-btn-group.open .dropdown-toggle_,
+#es .es-stream-filter-bar .o-btn-group.open .dropdown-toggle_ {
+	background: #252637 !important;
+}
+
+.o-grid-sm__cell {
+	color: #000;
+}
+
+/* EasySocial - avatars */
+.o-avatar--sm.o-avatar--rounded {
+	border-radius: 30px !important;
+	overflow: hidden !important;
+	width: 35px;
+	height: 35px;
+}
+
+
+/* ==========================================================================
+   SPECIAL ELEMENTS & UTILITIES
+   ========================================================================== */
+
+.sysicon {
+	float: left;
+	margin-right: 52px;
+}
+
+.myshortlist_item {
+	margin-bottom: 10px;
+	max-width: 90%;
+	line-height: 45px;
+}
+
+.myshortlist_item_image {
+	display: none !important;
+}
+
+.profilepic-grid {
+	padding: 20px 0px;
+}
+
+.kontaktkort {
+	margin: 20px 0px;
+}
+
+.document-title {
+	position: relative;
+	top: 4px;
+}
+
+.el-slidenav {
+	border-radius: 300px;
+}
+
+/* Slider overlay h5 text - smaller font */
+#page\#0 .el-title {
+	font-size: 18px !important;
+}
+
+/* Dashboard panel h2 headings - use h3 sizing */
+#page\#2 h2,
+#page\#4 h2,
+#page\#5 h2,
+#page\#6 h2,
+#page\#7 h2 {
+	font-size: 30px;
+	line-height: 1.2;
+	font-weight: 600;
+	letter-spacing: -.75px;
+}
+
+.jp_search_right .jp-intranet-edit {
+	float: right;
+	position: relative;
+	top: -58px;
+}
+
+#instanfeedback_pluginjar {
+	position: relative;
+	left: -200px !important;
+}
+
+.tm-bottom {
+	display: none;
+}
+
+/* Form elements */
+.choices__list--dropdown .choices__item--selectable {
+	background: #fff !important;
+	color: #333;
+}
+
+/* Footer menu */
+.footermeny {
+	border: none !important;
+	color: #FFF !important;
+	background: #284f94 !important;
+}
+
+a.footermeny:before {
+	content: '• ';
+}
+
+/* List style content */
+
+#tm-main .uk-first-column ul li, #tm-main .uk-first-column ol li,
+.uk-panel[data-element] ul li, .uk-panel[data-element] ol li {
+  margin-bottom: 0.5em;
+}
+
+#tm-main .uk-first-column ul li:last-child, #tm-main .uk-first-column ol li:last-child,
+.uk-panel[data-element] ul li:last-child, .uk-panel[data-element] ol li:last-child {
+  margin-bottom: 0;
+}
+
+#tm-main .uk-first-column ul, #tm-main .uk-first-column ol,
+.uk-panel[data-element] ul, .uk-panel[data-element] ol {
+  margin-bottom: 0 !important;
+}
+
+/* Restore spacing when a list is directly followed by a heading */
+#tm-main ul + h2, #tm-main ul + h3, #tm-main ul + h4,
+#tm-main ol + h2, #tm-main ol + h3, #tm-main ol + h4,
+.uk-panel[data-element] ul + h2, .uk-panel[data-element] ul + h3, .uk-panel[data-element] ul + h4,
+.uk-panel[data-element] ol + h2, .uk-panel[data-element] ol + h3, .uk-panel[data-element] ol + h4 {
+  margin-top: 30px !important;
+}
+
+
+/* ==========================================================================
+   MEDIA QUERIES
+   ========================================================================== */
+
+/* Tablet and above (960px+) */
+@media only screen and (min-width: 960px) {
+	.uk-navbar .uk-navbar-left {
+		margin-right: 0px !important;
+	}
+
+	#jp_input_div {
+		max-width: 400px !important;
+	}
+
+	#module-156 {
+		width: 400px !important;
+	}
+
+	#tm-sidebar {
+		width: 380px !important;
+	}
+}
+
+/* Desktop (1200px+) */
+@media only screen and (min-width: 1200px) {
+	#tm-sidebar {
+		width: 380px !important;
+	}
+}
+
+/* Mobile (max 768px) */
+@media only screen and (max-width: 768px) {
+	.uk-alert .uk-icon {
+		width: 30px;
+	}
+
+	.important-msg {
+		width: 75% !important;
+	}
+}
+
+/* Small mobile (max 450px) */
+@media only screen and (max-width: 450px) {
+	.sysicon {
+		margin-right: 45px !important;
+	}
+}
