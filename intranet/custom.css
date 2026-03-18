@@ -921,6 +921,61 @@ input #remove-thumbnail.o-checkbox {
 	height: 35px;
 }
 
+/* ==========================================================================
+   EASYSOCIAL - STREAM TYPOGRAPHY
+   ========================================================================== */
+
+/* Base font for the stream module — align with site-wide Lato */
+.mod-es-stream#es,
+.mod-es-stream #es {
+	font-family: 'Lato', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+	font-size: 16px !important;
+}
+
+/* Stream post body text */
+#es .es-stream-content {
+	font-family: 'Lato', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+	font-size: 16px !important;
+	line-height: 1.5;
+}
+
+/* Comment text */
+#es .es-comment-content {
+	font-size: 16px !important;
+	line-height: 1.5;
+}
+
+/* Author name in stream header */
+#es .es-stream-meta .es-stream-title,
+#es .es-stream-meta .es-stream-title a {
+	font-size: 16px !important;
+}
+
+/* Timestamp and meta footer */
+#es .es-stream-meta .es-stream-meta-footer {
+	font-size: 14px !important;
+}
+
+/* Stream header (commented/reacted notice) */
+#es .es-stream-header {
+	font-size: 14px !important;
+}
+
+/* Link preview text */
+#es .es-stream-embed__title {
+	font-size: 16px !important;
+}
+
+#es .es-stream-embed__desc {
+	font-size: 16px !important;
+	line-height: 1.5;
+}
+
+/* Comment form textarea */
+#es .es-comments-form textarea {
+	font-family: 'Lato', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+	font-size: 16px !important;
+}
 
 /* ==========================================================================
    SPECIAL ELEMENTS & UTILITIES
@@ -959,7 +1014,7 @@ input #remove-thumbnail.o-checkbox {
 }
 
 /* Slider overlay h5 text - smaller font */
-#page\#0 .el-title {
+#page\#0 .uk-overlay .el-title {
 	font-size: 16px !important;
 }
 
