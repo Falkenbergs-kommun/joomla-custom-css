@@ -461,7 +461,7 @@ h1.wave::before {
    SECTIONS & PANELS
    ========================================================================== */
 
-/* Hyphenation for text inside panels */
+/* Hyphenation for text inside panels and cards */
 .uk-panel p,
 .uk-panel div,
 .uk-panel h1,
@@ -469,9 +469,20 @@ h1.wave::before {
 .uk-panel h3,
 .uk-panel h4,
 .uk-panel h5,
-.uk-panel h6 {
+.uk-panel h6,
+.uk-card-body h1,
+.uk-card-body h2,
+.uk-card-body h3,
+.uk-card-body h4,
+.uk-card-body h5,
+.uk-card-body h6 {
 	hyphens: auto;
 	overflow-wrap: break-word;
+}
+
+/* Prevent grid children from overflowing their column */
+.uk-grid > * {
+	min-width: 0;
 }
 
 .sectop {
