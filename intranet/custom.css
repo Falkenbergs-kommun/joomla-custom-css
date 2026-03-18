@@ -438,8 +438,18 @@ div#mceu_11, div#mceu_15, div#mceu_16, div#mceu_17 {
 	padding: 10px 0px 5px 0px !important;
 }
 
-h1.main-head-element {
+#tm-main h1.main-head-element {
 	margin-top: -70px;
+}
+
+/* Breadcrumb bar on Builder pages — full-width grey background matching regular pages */
+.uk-section-default > .uk-container nav[aria-label="Breadcrumb"] {
+	background-color: #EEE;
+	margin-left: calc(-50vw + 50%);
+	margin-right: calc(-50vw + 50%);
+	margin-top: -70px;
+	padding: 17px calc(50vw - 50%) 10px;
+	margin-bottom: 20px;
 }
 
 h1.wave::before {
