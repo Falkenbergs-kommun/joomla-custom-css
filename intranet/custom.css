@@ -439,7 +439,11 @@ div#mceu_11, div#mceu_15, div#mceu_16, div#mceu_17 {
 }
 
 #tm-main h1.main-head-element {
-	margin-top: -70px;
+	margin-top: -50px;
+}
+
+#tm-main .uk-section.uk-padding-remove-top > .uk-container > .uk-grid > .uk-width-1-1 > h1:first-child {
+	margin-top: 20px;
 }
 
 /* Breadcrumb bar on Builder pages — full-width grey background matching regular pages */
