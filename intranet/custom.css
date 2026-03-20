@@ -8,10 +8,7 @@
    BASE & TYPOGRAPHY
    ========================================================================== */
 
-h3 {
-	word-break: auto-phrase;
-	hyphens: auto;
-}
+/* Hyphenation scoped to card layouts — not applied to regular article text */
 
 /* ==========================================================================
    ACCESSIBILITY
@@ -475,15 +472,8 @@ h1.wave::before {
    SECTIONS & PANELS
    ========================================================================== */
 
-/* Hyphenation for text inside panels and cards */
-.uk-panel p,
-.uk-panel div,
-.uk-panel h1,
-.uk-panel h2,
-.uk-panel h3,
-.uk-panel h4,
-.uk-panel h5,
-.uk-panel h6,
+/* Hyphenation for text inside cards — not applied to regular article text */
+.uk-card-body p,
 .uk-card-body h1,
 .uk-card-body h2,
 .uk-card-body h3,
