@@ -19,10 +19,17 @@ Changes to CSS files here take effect immediately on the corresponding site — 
 
 ## Structure
 
-- `intranet/` — Styles for the intranet site (dev-intra.falkenberg.se)
-- `externwebb/` — Styles for the external website (kommun.falkenberg.se)
-- `bibliotek/` — Styles for the library site (bibliotek.falkenberg.se)
-- Additional site directories may be added following the same pattern: `<site-name>/custom.css`
+- `bibliotek/` — Library site (bibliotek.falkenberg.se)
+- `campusfalkenberg/` — Campus Falkenberg (campusfalkenberg.se)
+- `elev/` — Student portal (elev.falkenberg.se)
+- `externwebb/` — External website (kommun.falkenberg.se)
+- `gymnasiehalland/` — Gymnasie Halland (gymnasiehalland.se)
+- `gymnasieskolan/` — Falkenbergs gymnasieskola (falkenbergsgymnasieskola.se)
+- `intranet/` — Intranet (dev-intra.falkenberg.se)
+- `klitterbadet/` — Klitterbadet (klitterbadet.se)
+- `vuxenutbildningen/` — Vuxenutbildningen (vuxenutbildningenfalkenberg.se)
+
+Additional site directories may be added following the same pattern: `<site-name>/custom.css`
 
 ## CSS conventions
 

@@ -10,9 +10,15 @@ Varje underkatalog motsvarar en sajt och innehåller den `custom.css` som symlä
 
 ```
 custom-styles-yootheme/
-├── intranet/          # Intranätet (dev-intra.falkenberg.se)
-│   └── custom.css
-└── ...                # Fler sajter läggs till efter samma mönster
+├── bibliotek/            # Biblioteket (bibliotek.falkenberg.se)
+├── campusfalkenberg/     # Campus Falkenberg (campusfalkenberg.se)
+├── elev/                 # Elevportalen (elev.falkenberg.se)
+├── externwebb/           # Externwebben (kommun.falkenberg.se)
+├── gymnasiehalland/      # Gymnasie Halland (gymnasiehalland.se)
+├── gymnasieskolan/       # Falkenbergs gymnasieskola (falkenbergsgymnasieskola.se)
+├── intranet/             # Intranätet (dev-intra.falkenberg.se)
+├── klitterbadet/         # Klitterbadet (klitterbadet.se)
+└── vuxenutbildningen/    # Vuxenutbildningen (vuxenutbildningenfalkenberg.se)
 ```
 
 ## Hur det fungerar

@@ -1,0 +1,530 @@
+@import url(https://fonts.googleapis.com/icon?family=Material+Icons);
+
+.uk-nav-default > li > a {border: 1px solid #ccc; background-color: #f9f9f9; margin-bottom: 2px; text-indent:10px; margin-left: 2px; margin-right: 1px; padding: 15px 0 15px 10px;}
+
+.uk-nav-default > li > a:hover {background-color: #fff;}
+
+.uk-offcanvas-bar .uk-nav > li > a {
+	padding: 10px 20px;
+}
+
+.topbar_icon {background-color: #edafb8;}
+
+
+
+.sidebarmenu .uk-nav-default>li>a{
+background: #3e3f5b;
+background: -webkit-gradient(linear,left bottom,left top,color-stop(0,#3e3f5b),color-stop(1,#3e3f5b)) !important;
+background: -ms-linear-gradient(bottom,#3e3f5b,#3e3f5b) !important;
+background: -moz-linear-gradient(center bottom,#3e3f5b 0%,#3e3f5b 100%) !important;
+background: -o-linear-gradient(#3e3f5b,#3e3f5b) !important;
+color:#FFF;
+margin-bottom:0px !important;
+border: 1px solid #000000 !important;
+border-color: RGBA(0,0,0,0.4) !important;
+border-width: 0 1px 1px 1px !important;
+-webkit-box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset;
+-moz-box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset;
+box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset;
+
+}
+
+
+.sidebarmenu .uk-nav-default>li>a:hover{
+	
+background:	-webkit-gradient(linear,left bottom,left top,color-stop(0,#727494),color-stop(1,#727494)) !important;
+color: #FFF;
+border-bottom-color: rgba(0,0,0,0.7);
+}
+
+.sidebarmenu .uk-nav-parent-icon>.uk-parent>a::after{
+content: "";
+width: 1.7em;
+height: 1.7em;
+float: right;
+background-image: url(https://dev-intra.falkenberg.se//images/plus.png);
+background-repeat: no-repeat;
+background-position: 50% 50%;
+	margin-right:15px
+
+}
+
+ .sidebarmenu ul.uk-nav-sub{
+background: -webkit-gradient(linear,left bottom,left top,color-stop(0,#616283),color-stop(1,#616283));
+background: -ms-linear-gradient(bottom,#616283,#616283);
+background: -moz-linear-gradient(center bottom,#616283 0%,#616283 100%);
+background: -o-linear-gradient(#616283,#616283);
+margin-left: 2px;
+margin-right: 1px;
+	
+}
+
+
+ .sidebarmenu .uk-nav-sub a{
+color: #FFF !important;
+	padding:10px 5px;
+}
+
+ .sidebarmenu .uk-nav-parent-icon>.uk-parent.uk-open>a::after{
+background-image: url(https://dev-intra.falkenberg.se/images/minus.png);
+}
+
+ .sidebarmenu .uk-active .uk-nav-parent-icon>.uk-parent.uk-open>a{
+/*background: #c36473 !important;
+background: -webkit-gradient(linear,left bottom,left top,color-stop(0,#c36473),color-stop(1,#c36473)) !important;
+background: -ms-linear-gradient(bottom,#c36473,#c36473) !important;
+background: -moz-linear-gradient(center bottom,#c36473 0%,#c36473 100%) !important;
+background: -o-linear-gradient(#c36473,#c36473) !important;*/
+color:#d2d2d2 !important;
+}
+
+div#mceu_15{
+display:none !important; 
+}
+
+div#mceu_16{
+display:none !important; 
+}
+
+div#mceu_17{
+display:none !important; 
+}
+
+div#mceu_11{
+display:none !important; 
+}
+
+div#mceu_6{
+display:none !important; 
+}
+
+div#mceu_7{
+display:none !important; 
+}
+
+div#mceu_8{
+display:none !important; 
+}
+
+div#mceu_2{
+display:none !important; 
+}
+
+#es .es-create-category-select .btn{
+color:#000;
+}
+
+.sectop{
+padding:40px;
+-webkit-box-shadow: 0px 0px 19px 2px rgba(0,0,0,0.39);
+-moz-box-shadow: 0px 0px 19px 2px rgba(0,0,0,0.39);
+box-shadow: 0px 0px 19px 2px rgba(0,0,0,0.10);
+	border-radius:10px
+}
+
+.sectop-blue{
+padding:40px;
+background: rgb(37,38,54);
+background: linear-gradient(0deg, rgba(37,38,54,1) 0%, rgba(62,63,91,1) 100%);
+-webkit-box-shadow: 0px 0px 19px 2px rgba(0,0,0,0.39);
+-moz-box-shadow: 0px 0px 19px 2px rgba(0,0,0,0.39);
+box-shadow: 0px 0px 19px 2px rgba(0,0,0,0.10);
+border-radius:10px;
+
+}
+
+.land-top{
+background: #252637 !important;
+}
+
+.egg{
+	opacity:0.1;
+}
+
+
+.sidebarmenu .uk-nav-default>li>a{
+	border: 1px solid #ccc;
+	background-color: #f9f9f9;
+	margin-bottom: 2px;
+	text-indent: 0px;
+	margin-left: 2px;
+	margin-right: 1px;
+	padding: 15px 0px 15px 10px !important;
+	max-width: 340px;
+	}
+
+
+.topbar_icon{background: #616283}
+
+.bwide .uk-button {
+width:100% !important;
+	padding-bottom:2px;
+}
+
+.darkm{
+background:#3e3f5b !important;
+}
+
+.greet button.uk-button.uk-button-primary {
+	display: none;
+}
+
+.uk-panel.greet {
+	font-size: 30px;
+	color: #FFF;
+	padding-top: 25px;
+}
+
+h1.wave::before {
+	content: "👋  ";
+	font-size: 40px;
+}
+
+.darkbox{
+background:#3e3f5b !important;
+}
+
+.news .uk-card-default{
+background:#FFF !important;
+	border:1px solid #ddd !important;
+	border-radius:0px !important;
+	box-shadow: 0px 1px 5px rgba(0,0,0,0.07);
+-webkit-box-shadow: 0px 1px 15px  rgba(0,0,0,0.07);
+-moz-box-shadow: 0px 1px 15px rgba(0,0,0,0.07);
+}
+
+.uk-heading-line>::after{
+margin-top:3px;
+}
+
+.tm-toolbar-default .uk-nav-parent-icon > .uk-parent > a::after, .uk-card-secondary.uk-card-body .uk-nav-parent-icon > .uk-parent > a::after, .uk-card-secondary > :not([class*="uk-card-media"]) .uk-nav-parent-icon > .uk-parent > a::after, .uk-light .uk-nav-parent-icon > .uk-parent > a::after, .uk-navbar-container:not(.uk-navbar-transparent) .uk-nav-parent-icon > .uk-parent > a::after, .uk-overlay-primary .uk-nav-parent-icon > .uk-parent > a::after, .uk-section-secondary:not(.uk-preserve-color) .uk-nav-parent-icon > .uk-parent > a::after, .uk-tile-primary:not(.uk-preserve-color) .uk-nav-parent-icon > .uk-parent > a::after, .uk-tile-secondary:not(.uk-preserve-color) .uk-nav-parent-icon > .uk-parent > a::after {
+	background-image: url(/images/plus.png);
+	}
+	.tm-toolbar-default .uk-nav-parent-icon > .uk-parent.uk-open > a::after, .uk-card-secondary.uk-card-body .uk-nav-parent-icon > .uk-parent.uk-open > a::after, .uk-card-secondary > :not([class*="uk-card-media"]) .uk-nav-parent-icon > .uk-parent.uk-open > a::after, .uk-light .uk-nav-parent-icon > .uk-parent.uk-open > a::after, .uk-navbar-container:not(.uk-navbar-transparent) .uk-nav-parent-icon > .uk-parent.uk-open > a::after, .uk-overlay-primary .uk-nav-parent-icon > .uk-parent.uk-open > a::after, .uk-section-secondary:not(.uk-preserve-color) .uk-nav-parent-icon > .uk-parent.uk-open > a::after, .uk-tile-primary:not(.uk-preserve-color) .uk-nav-parent-icon > .uk-parent.uk-open > a::after, .uk-tile-secondary:not(.uk-preserve-color) .uk-nav-parent-icon > .uk-parent.uk-open > a::after {background-image: url(/images/minus.png);
+	}
+	
+	@media only screen  and (min-width: 960px)
+	{
+		
+		.uk-navbar .uk-navbar-left
+		{
+			margin-right:0px !important;
+		}
+		#jp_input_div
+		{
+			max-width:340px !important;
+		}
+		#module-156
+		{
+			width:340px !important;
+		}
+	}
+	@media only screen  and (min-width: 960px)
+	{
+		#tm-sidebar
+		{
+			width:380px !important;
+		}
+		
+	}
+	@media only screen  and (min-width: 1200px)
+	{
+		#tm-sidebar
+		{
+			width:380px !important;
+		}
+		
+	}
+	.sidebarmenu .uk-nav-default > li.uk-active > a {
+
+background: -webkit-gradient(linear,left bottom,left top,color-stop(0,#c36473),color-stop(1,#c36473)) !important;
+
+}
+
+.sidebarmenu .uk-nav-parent-icon .uk-nav-parent-icon > li.uk-active > a {
+color:#d2d2d2 !important;
+}
+.sidebarmenu .uk-nav-parent-icon > li.uk-active.uk-open.uk-parent > a, .sidebarmenu .uk-nav-parent-icon > li.uk-active > a {
+color:white!important;
+}
+
+
+.uk-alert.observeraruta {
+color: #000;
+background: #edafb8;
+
+}
+
+
+.uk-alert.chefsinfo {
+background: #204e99;
+color: #FFF;
+
+}
+
+.uk-alert.dekorationsbox{
+background:#EEE !important;
+}
+
+.news-list a.uk-link-text{
+display:none !important;
+}
+
+.news-list .uk-text-meta{
+font-size:12px;
+    color:#000;
+}
+
+.news-list .el-content{
+margin-bottom:-35px !important;
+    font-size:14px;
+}
+
+.social-menu#es .es-toolbar  {
+background:transparent;
+border:none !important;
+}
+
+ .social-menu#es .es-toolbar__item--home-submenu .es-toolbar__link{
+display:none !important;
+}
+
+.social-menu .es-toolbar__item es-toolbar__item--home-submenu, .social-menu .es-toolbar__item es-toolbar__item--home{
+    padding:0px !important
+
+}
+
+
+.social-menu{
+max-width:140px !important;
+    float:right !important;
+}
+
+.social-menu#es .es-toolbar__dropdown-menu{
+max-width:300px !important;
+    width:300px !important;
+}
+
+.social-menu#es .t-lg-mb--lg{
+margin-bottom:0px !important;
+}
+
+.myshortlist_item {
+margin-bottom: 10px;
+max-width: 90%;
+/* margin-top: 5px; */
+line-height: 45px;
+}
+
+.social-menu#es i{
+    width: 36px;
+    height: 36px;
+}
+
+.social-menu#es .es-toolbar__link{
+padding:0px 0px
+}
+
+.social-menu#es .es-toolbar__item--home{
+display:none;
+}
+
+.social-menu#es .es-toolbar__item--home+.es-toolbar__item--home-submenu{
+display:none;
+}
+
+.social-menu#es .es-toolbar__link.has-avatar:before{
+right:-10px;
+}
+
+.sysicon{
+    float: left;
+    margin-top: 8px;
+    margin-right: 5px;
+}
+
+.social-menu#es .es-toolbar__link-bubble {
+    display: none;
+    position: absolute;
+    color: #fff;
+    background-color: #f65b5b;
+    top: 0;
+    left: auto;
+    right: -2px;
+    min-width: 15px;
+    height: 15px;
+    overflow: hidde;
+    border-radius: 13px;
+    text-align: center;
+    font-size: 10px;
+    line-height: 14px;
+    font-weight: bold;
+    padding: 0 2px;
+}
+
+#es .es-toolbar__item--action .dropdown_ {
+    position: static;
+    padding-left: 5px;
+}
+
+.process-2{
+background: #363750;
+}
+
+.process-nav{
+border-right:0px solid;
+}
+
+.uk-accordion-title{
+font-weight:700 !important;
+color: #3e3f5b !important;
+}
+
+h1.main-head-element {
+    margin-top: -70px;
+}
+
+.uk-navbar-toggle-icon { color: #fff !important; }
+
+.myshortlist_item_image{
+display:none !important;
+}
+
+#es .o-nav--stacked .o-nav__item{
+padding:5px 0;
+}
+
+.recent-files .o-nav--stacked .o-nav__item{
+border-bottom:1px solid #DDD;
+}
+
+
+.es-modules-wrap.es-modules-es-sidebar {
+    background: #f9f9f9;
+    padding: 12px;
+    border: 1px solid #DDD;
+}
+
+.recent-files.es-side-widget__bd li a {
+display: block;
+  width: 200px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+
+.falkmenu {
+    padding-left: 30px !important;
+    background:#727494;
+    margin-left: 2px !important;
+    margin-right: 1px !important;
+}
+
+.sidebarmenu a{
+color: #FFF;
+}
+
+.falkmenu .sidebarmenu .uk-nav-parent-icon>.uk-parent.uk-open>a{
+background:none !important
+}
+
+
+.verksamhetsinformation .el-title{
+
+}
+.verksamhetsinformation .el-item{
+
+}
+
+.verksamhetsinformation{
+
+}
+
+.cta {
+    background: #edafb8 !important;
+    color: #000;
+}
+
+.uk-accordion-title::before {
+    content: url(https://dev-intra.falkenberg.se/images/interface/add_circle_outline_petrol.svg);
+	margin-left:0px;
+    margin-right: 10px;
+    float: left;
+    background-image:none !important;
+    margin-top:auto;
+    margin-bottom:auto;
+    
+}
+
+.uk-open > .uk-accordion-title::before {
+   content: url(https://dev-intra.falkenberg.se/images/interface/remove_circle_outline_petrol.svg);
+	margin-left:0px;
+    margin-right: 10px;
+    float: left;
+    background-image:none !important;
+       margin-top:auto;
+    margin-bottom:auto;
+    
+}
+
+.verksamhetsinformation .uk-accordion-title::before {
+   content: url(https://dev-intra.falkenberg.se/images/interface/add_circle_outline_pink.svg);
+	margin-left:0px;
+    margin-right: 10px;
+    vertical-align:middle !important;
+    float: left;
+    background-image:none !important;
+       margin-top:auto;
+    margin-bottom:auto;
+  
+}
+
+.uk-accordion-title{
+display:flex;
+}
+
+
+
+.uk-accordion>:nth-child(n+2) {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 0px solid #e5e5e5;
+}
+
+
+
+.uk-accordion{
+    margin-top: 20px !important;
+    margin-bottom: 20px !important;
+}
+
+.kontaktkort{
+margin:20px 0px;
+}
+
+p{
+margin-top:5px !important;
+}
+
+h2,h3,h4{
+margin-bottom: 10px;
+}
+
+.uk-accordion-title > h2, h3, h4 {
+    margin: auto 0px;
+}
+
+
+
+.sidebarmenu .uk-nav-parent-icon .uk-nav-parent-icon > li.uk-active > a {
+color: #FFF !important;
+text-decoration: underline;
+ 
+}
+
+
+
+
+
+	
