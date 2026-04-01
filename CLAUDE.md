@@ -21,6 +21,7 @@ Changes to CSS files here take effect immediately on the corresponding site — 
 
 - `intranet/` — Styles for the intranet site (dev-intra.falkenberg.se)
 - `externwebb/` — Styles for the external website (kommun.falkenberg.se)
+- `bibliotek/` — Styles for the library site (bibliotek.falkenberg.se)
 - Additional site directories may be added following the same pattern: `<site-name>/custom.css`
 
 ## CSS conventions
