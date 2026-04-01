@@ -538,10 +538,6 @@ h1.wave::before {
 	background: #EEE !important;
 }
 
-.uk-alert h2 {
-	margin-bottom: -25px !important;
-}
-
 .uk-alert .uk-content {
 	margin-top: 0px !important;
 }

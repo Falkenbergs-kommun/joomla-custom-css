@@ -1,0 +1,181 @@
+.uk-navbar-center .uk-align-left {
+	margin: 0px !important;
+}
+
+/* Accordion plusboxar 2025 */
+
+.uk-accordion-title {
+	padding: 13px 10px 13px 0px !important;
+	border: 1px solid #d3d8e2 !important;
+	position: relative;
+	width: auto;
+	margin-top: 5px;
+	background-color: #F6F9FC;
+}
+
+.uk-accordion-title span,
+.uk-accordion-title span a,
+.uk-accordion-title span a:visited,
+.uk-accordion-title span a:hover,
+.uk-accordion-title span a:active {
+    color: #000;
+    display: flex;
+    text-decoration: none; /* om du vill ta bort understrykning */
+}
+.uk-accordion-title::before {
+background-color: #000 !important;
+  mask: url("https://kommun.falkenberg.se/modules/mod_jp_yootheme_menu/assets/plus-down.svg") no-repeat 50% 50%;
+    mask-size: auto;
+  mask-size: 100% !important;
+  width: 24px;
+  height: 24px;
+  transform: rotate(0);
+  transition: transform 250ms linear;
+  background-image: none;
+  float: left;
+  margin-right: 15px;
+ }
+.uk-open > .uk-accordion-title::before {
+	mask: url("https://kommun.falkenberg.se/modules/mod_jp_yootheme_menu/assets/plus-up.svg") no-repeat 50% 50%;
+    mask-size: auto;
+  transform: rotate(360deg);
+  transition: transform 250ms linear;
+  background-image: none;
+}
+
+.uk-accordion-content {
+	border: 1px solid #d3d8e2 !important;
+	border-top: none !important;
+	padding: 20px !important;
+	margin-top: 0px !important;
+
+}
+
+.uk-accordion-title:hover {
+    text-decoration: underline;
+}
+
+/* Ny CTA-knapp */
+/* Uppdaterad till Lato-typsnitt 2025 */
+.cta2024>* {
+	background-color: #13153B;
+	font-family: 'Lato', Arial, Helvetica, sans-serif;
+    font-weight: 400;
+}
+
+.cta2024>*:hover {
+	background-color: #4e506c !important;
+}
+
+.cta2024 a.uk-button {
+    text-align: left;
+}
+
+.cta2024fw {
+    display: flex; /* Säkerställ att omgivande div inte påverkar layouten */
+    flex-direction: column; /* Förhindra sidledes placering */
+}
+
+.cta2024fw a.uk-button {
+	display: block; /* Gör så att textjusteringen fungerar bättre */
+	width: 100%; /* Fyller hela bredden av den omgivande div */
+	box-sizing: border-box; /* Säkerställer att padding inkluderas i bredden */
+}
+
+/* Cludo SERP */
+li.search-results-item a {
+	text-decoration: none;
+}
+
+li.search-results-item a:hover {
+	text-decoration: none;
+}
+
+li.search-results-item a h2:hover {
+	text-decoration: underline;
+}
+
+li.search-results-item p {
+	margin-bottom: 5px;
+}
+
+li.search-results-item span.path {
+	font-size: small;
+	color: #1f4e99;
+	margin-top: 0;
+}
+
+li.search-results-item {
+    border-bottom: 1px solid #ccc; /* En tunn linje med ljusgrå färg */
+    padding-bottom: 8px; /* Lägg till lite utrymme mellan innehållet och linjen, valfritt */
+    margin-bottom: 8px; /* Lägg till lite utrymme under varje objekt, valfritt */
+}
+
+
+.jp-menyknapp {
+    font-weight: 700;
+}
+
+/* Understrykning toppen på sidan */
+
+a:hover .falkmenu-title {
+    text-decoration: underline;
+}
+
+/* Ram runt filter för medarbetarporträtt */
+.career-filterdiv {
+	background-color: #607ebe;
+}
+
+/* Marginal nedtill efter punkt i punktlista */
+#tm-main ul ol li {
+    margin-bottom: 0.5em;  /* Sätter radavstånd till 1,5 */
+}
+
+/* RS Form  */
+
+.rsform-submit-button {
+	color: white !important;
+}
+
+/* Mellanrum före filstorlek i docman-länkar  */
+a.doclink-insert span:last-of-type::before,
+a.doclink span:last-of-type::before {
+  content: "\00a0"; /* eller bara ett vanligt space: content: " "; */
+}
+
+.observera2025 {
+    background-color: #ffd000;
+}
+
+.faktaruta2025 {
+    background-color: #C5D7F3;
+}
+
+.ctaruta2025 {
+    padding: 0px 0px 10px 30px;
+    background-color: #13153B;
+}
+
+/* Caption-stil för UIkit-tabeller */
+.uk-table caption {
+  font-family: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif; /* Svensk: fallback-typsnitt */
+  font-size: 19px;      /* Svensk: storlek */
+  font-weight: 600;     /* Svensk: fet stil */
+  line-height: 1.3;     /* Svensk: bättre läsbarhet (valfritt) */
+}
+
+/* Avstava rubriker */
+@media (max-width: 767px) and (orientation: portrait) {
+  h1 {
+    word-break: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+}
+
+.uk-link {
+  word-break: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
