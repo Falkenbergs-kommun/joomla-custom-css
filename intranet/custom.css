@@ -10,6 +10,10 @@
 
 /* Hyphenation scoped to card layouts — not applied to regular article text */
 
+#tm-main div > p.lead:first-child {
+	margin-top: 20px;
+}
+
 /* ==========================================================================
    ACCESSIBILITY
    ========================================================================== */
@@ -1034,6 +1038,7 @@ input #remove-thumbnail.o-checkbox {
 }
 
 /* Dashboard panel h2 headings - use h3 sizing */
+#page\#0 h2,
 #page\#2 h2,
 #page\#4 h2,
 #page\#5 h2,
