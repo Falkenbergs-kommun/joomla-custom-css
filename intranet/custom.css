@@ -10,8 +10,8 @@
 
 /* Hyphenation scoped to card layouts — not applied to regular article text */
 
-#tm-main div > p.lead:first-child {
-	margin-top: 20px;
+#tm-main ol.uk-list-collapse {
+	padding-bottom: 20px;
 }
 
 /* ==========================================================================
