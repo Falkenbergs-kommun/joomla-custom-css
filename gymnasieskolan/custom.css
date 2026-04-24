@@ -37,9 +37,10 @@ color: #FFF;
   padding: 5px 10px;
   color: #fff;
   line-height: 1.5;
-  word-break: break-word;
+  /* Ingen hyphens — rubriker i färgade block ser bäst ut obrutna.
+     overflow-wrap löser det ovanliga fallet att ett enskilt ord är bredare än blocket. */
   overflow-wrap: break-word;
-  hyphens: auto;
+  text-wrap: balance;
 }
 
 .kortinfo-bg {
@@ -51,7 +52,6 @@ color: #FFF;
   color: #000000;
   line-height: 1.5;
   margin: 0 0 10px 0;
-  word-break: break-word;
   overflow-wrap: break-word;
-  hyphens: auto;
+  text-wrap: balance;
 }

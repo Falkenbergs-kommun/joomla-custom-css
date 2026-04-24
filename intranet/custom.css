@@ -476,15 +476,22 @@ h1.wave::before {
    SECTIONS & PANELS
    ========================================================================== */
 
-/* Hyphenation for text inside cards — not applied to regular article text */
-.uk-card-body p,
-.uk-card-body h1,
-.uk-card-body h2,
-.uk-card-body h3,
-.uk-card-body h4,
-.uk-card-body h5,
-.uk-card-body h6 {
+/* Svensk avstavning för brödtext i kort — ej för artiklar i övrigt */
+.uk-card-body p {
+	-webkit-hyphens: auto;
 	hyphens: auto;
+	-webkit-hyphenate-limit-chars: 7 3 3;
+	hyphenate-limit-chars: 7 3 3;
+	-webkit-hyphenate-limit-lines: 2;
+	hyphenate-limit-lines: 2;
+	overflow-wrap: break-word;
+	text-wrap: pretty;
+}
+
+/* Rubriker i kort: balansera rader istället för att avstava.
+   overflow-wrap kvarstår som sista utväg för extremt långa ord. */
+.uk-card-body :is(h1, h2, h3, h4, h5, h6) {
+	text-wrap: balance;
 	overflow-wrap: break-word;
 }
 

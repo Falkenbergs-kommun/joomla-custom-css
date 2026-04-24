@@ -165,17 +165,22 @@ a.doclink span:last-of-type::before {
   line-height: 1.3;     /* Svensk: bättre läsbarhet (valfritt) */
 }
 
-/* Avstava rubriker */
+/* Avstava rubriker — svenska regler, endast på smal portrait-skärm */
 @media (max-width: 767px) and (orientation: portrait) {
   h1 {
-    word-break: break-word;
-    overflow-wrap: break-word;
+    text-wrap: balance;
+    -webkit-hyphens: auto;
     hyphens: auto;
+    -webkit-hyphenate-limit-chars: 10 4 4;
+    hyphenate-limit-chars: 10 4 4;
+    -webkit-hyphenate-limit-lines: 2;
+    hyphenate-limit-lines: 2;
+    overflow-wrap: break-word;
   }
 }
 
+/* Länkar: förhindra enbart överflöd av långa URL:er.
+   Ingen avstavning — menyer, breadcrumbs och CTA ska inte avstavas. */
 .uk-link {
-  word-break: break-word;
   overflow-wrap: break-word;
-  hyphens: auto;
 }

@@ -39,6 +39,7 @@ Additional site directories may be added following the same pattern: `<site-name
 - `!important` is used liberally to override YOOtheme's compiled styles — this is intentional and expected.
 - Sections are separated by large comment banners (`/* === SECTION NAME === */`) — maintain this convention when adding new rules.
 - Icon images are referenced via absolute paths from site root (e.g., `/images/plus.png`, `/images/interface/chevron.svg`).
+- **Swedish hyphenation pattern** (for panels, cards, framed text blocks): combine `hyphens: auto` with `hyphenate-limit-chars: 7 3 3` (body) or `10 4 4` (headings) and `hyphenate-limit-lines: 2`. Keep `-webkit-` prefixes for iOS < 17. Do NOT use `word-break: break-word` — it bypasses the Swedish hyphenation dictionary and produces mid-word breaks at non-stavelse points. For short heading/label blocks, prefer `text-wrap: balance` over hyphenation. Always keep `overflow-wrap: break-word` as a last-resort fallback for words the dictionary can't break (URLs, odd proper nouns). Canonical example: `.uk-card-body p` in `intranet/custom.css`.
 
 ## Adding a new site
 
