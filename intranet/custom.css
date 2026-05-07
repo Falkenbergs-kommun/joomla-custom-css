@@ -1070,10 +1070,6 @@ input #remove-thumbnail.o-checkbox {
 	left: -200px !important;
 }
 
-.tm-bottom {
-	display: none;
-}
-
 /* Form elements */
 .choices__list--dropdown .choices__item--selectable {
 	background: #fff !important;
