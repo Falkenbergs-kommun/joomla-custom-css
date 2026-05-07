@@ -14,6 +14,14 @@
 	padding-bottom: 20px;
 }
 
+/* Underline links in body text by default (accessibility — don't rely on color alone) */
+#tm-main .uk-first-column p a,
+#tm-main .uk-first-column li a,
+.uk-panel[data-element] p a,
+.uk-panel[data-element] li a {
+	text-decoration: underline;
+}
+
 /* ==========================================================================
    ACCESSIBILITY
    ========================================================================== */
