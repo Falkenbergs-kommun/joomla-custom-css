@@ -247,7 +247,7 @@ a.uk-accordion-title {
 	text-decoration: none !important;
 }
 
-.uk-accordion-title > h2, h3, h4 {
+.uk-accordion-title > :is(h2, h3, h4) {
 	margin: auto 0px;
 }
 
