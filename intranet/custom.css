@@ -1107,19 +1107,6 @@ a.footermeny:before {
   margin-bottom: 0;
 }
 
-#tm-main .uk-first-column ul, #tm-main .uk-first-column ol,
-.uk-panel[data-element] ul, .uk-panel[data-element] ol {
-  margin-bottom: 0 !important;
-}
-
-/* Restore spacing when a list is directly followed by a heading */
-#tm-main ul + h2, #tm-main ul + h3, #tm-main ul + h4,
-#tm-main ol + h2, #tm-main ol + h3, #tm-main ol + h4,
-.uk-panel[data-element] ul + h2, .uk-panel[data-element] ul + h3, .uk-panel[data-element] ul + h4,
-.uk-panel[data-element] ol + h2, .uk-panel[data-element] ol + h3, .uk-panel[data-element] ol + h4 {
-  margin-top: 30px !important;
-}
-
 
 /* ==========================================================================
    MEDIA QUERIES
