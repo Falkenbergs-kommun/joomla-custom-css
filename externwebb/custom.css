@@ -71,6 +71,34 @@ background-color: #000 !important;
     text-align: left;
 }
 
+/* CTA-knapp Krami — rundade hörn och mörkare bakgrund via backdrop-filter */
+.cta-krami > * {
+    background-color: transparent !important;
+    backdrop-filter: brightness(0.85) !important;
+    -webkit-backdrop-filter: brightness(0.85) !important;
+    border-radius: 12px !important;
+    font-family: 'Lato', Arial, Helvetica, sans-serif;
+    font-weight: 400;
+}
+
+.cta-krami > *:hover {
+    backdrop-filter: brightness(0.7) !important;
+    -webkit-backdrop-filter: brightness(0.7) !important;
+}
+
+.cta-krami a,
+.cta-krami a:link,
+.cta-krami a:visited,
+.cta-krami a:hover,
+.cta-krami a:active,
+.cta-krami a:focus {
+    color: #fff !important;
+}
+
+.cta-krami a.uk-button {
+    text-align: left;
+}
+
 .cta2024fw {
     display: flex; /* Säkerställ att omgivande div inte påverkar layouten */
     flex-direction: column; /* Förhindra sidledes placering */
@@ -150,6 +178,13 @@ a.doclink span:last-of-type::before {
 
 .faktaruta2025 {
     background-color: #C5D7F3;
+}
+
+.faktaruta-krami {
+    background-color: transparent !important;
+    backdrop-filter: brightness(0.85) !important;
+    -webkit-backdrop-filter: brightness(0.85) !important;
+    border-radius: 12px !important;
 }
 
 .ctaruta2025 {
