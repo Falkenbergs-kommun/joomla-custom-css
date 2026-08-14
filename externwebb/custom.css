@@ -192,9 +192,14 @@ a.doclink span:last-of-type::before {
     background-color: #13153B;
 }
 
-/* Relaterade länkar — ljusblå sektion med rundade hörn på grid-korten */
+/* Relaterade länkar — mörkblå sektion med rundade hörn på grid-korten */
 .relaterade-lankar {
-    background-color: #f2fafe;
+    background-color: #13153B;
+    color: #fff;
+}
+
+.relaterade-lankar h2 {
+    color: #fff; /* rubrik direkt på mörk bakgrund; kortens h3 behåller sin egen färg */
 }
 
 .relaterade-lankar .uk-grid > * > * {
