@@ -192,6 +192,16 @@ a.doclink span:last-of-type::before {
     background-color: #13153B;
 }
 
+/* Relaterade länkar — ljusblå sektion med rundade hörn på grid-korten */
+.relaterade-lankar {
+    background-color: #f2fafe;
+}
+
+.relaterade-lankar .uk-grid > * > * {
+    border-radius: 12px;
+    overflow: hidden; /* klipper ev. bilder mot de rundade hörnen */
+}
+
 /* Caption-stil för UIkit-tabeller */
 .uk-table caption {
   font-family: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif; /* Svensk: fallback-typsnitt */
