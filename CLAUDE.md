@@ -31,6 +31,14 @@ Changes to CSS files here take effect immediately on the corresponding site — 
 
 Additional site directories may be added following the same pattern: `<site-name>/custom.css`
 
+## Workflow: check the YOOtheme customizer first
+
+Before adding a rule to `custom.css`, investigate whether the styling issue is an effect of YOOtheme **customizer settings**. If the same result can be achieved by moving a customizer setting toward its default, that is preferred. Always explore both the customizer and the custom CSS to decide where the fix is most effective.
+
+- The customizer's compiled output lives at `<site>/templates/yootheme_child/css/theme.9.css` — grep it for the actual values (`.uk-margin`, heading margins, font sizes) and compare against UIkit defaults. A deviation there means the customizer is the cause.
+- Known intranet customizer values: global margin `.uk-margin` = **40px** and `.uk-margin-small` = **24px** (UIkit defaults: 20/10px). This explains most "too much vertical spacing" issues between builder elements. Headings and paragraphs use 20px margins, so normal text rhythm is 20px.
+- Fall back to `custom.css` when the customizer can't target the case (contextual rules like "ingress directly after h1") or when changing the global setting would affect the whole site.
+
 ## CSS conventions
 
 - The stylesheet targets **UIkit 3** (YOOtheme's framework) — selectors use `.uk-*` classes extensively.

@@ -455,6 +455,23 @@ div#mceu_11, div#mceu_15, div#mceu_16, div#mceu_17 {
 	margin-top: 20px;
 }
 
+/* Minska avståndet mellan huvudrubrik och ingress.
+   Customizerns globala margin (.uk-margin) är 40px; 20px matchar
+   avståndet mellan h2 och efterföljande text (rubrikens margin-bottom
+   kollapsad med styckets margin-top, båda 20px). */
+#tm-main h1:has(+ .uk-panel.uk-text-lead) {
+	margin-bottom: 0;
+}
+#tm-main h1 + .uk-panel.uk-text-lead {
+	margin-top: 20px !important;
+	margin-bottom: 0;
+}
+
+/* Avstånd ingress -> nästa element: 20px, som mellan vanliga stycken */
+#tm-main h1 + .uk-panel.uk-text-lead + * {
+	margin-top: 20px !important;
+}
+
 /* Breadcrumb bar on Builder pages — full-width grey background matching regular pages */
 .uk-section-default > .uk-container nav[aria-label="Breadcrumb"] {
 	background-color: #EEE;
