@@ -242,9 +242,12 @@ a.doclink span:last-of-type::before {
    sidor utan menyn berörs ej.
    Bredden växer gradvis med ledig yta: (100vw − 1240px)/2 motsvarar
    marginalen utanför containern (max 1200px + 40px padding) med god
-   säkerhetsmarginal för scrollbar — max +30% (~72px) nås vid ~1384px. */
+   säkerhetsmarginal för scrollbar — max +30% (~62px) nås vid ~1384px.
+   max-width: none krävs — YOOthemes [class*=uk-width] sätter max-width:100%
+   som annars klampar bredden tillbaka till kolumnbredd. */
 @media (min-width: 1280px) {
   .uk-width-1-5\@m .uk-panel > ul.uk-list.uk-tile-secondary.uk-position-absolute {
     width: min(130%, calc(100% + (100vw - 1240px) / 2)) !important;
+    max-width: none !important;
   }
 }
