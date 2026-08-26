@@ -236,13 +236,15 @@ a.doclink span:last-of-type::before {
 }
 
 /* Högermeny (undersidesmeny i 1/5-kolumn): bredda åt höger på stora skärmar.
-   Listan är position:absolute och ligger utanför flödet, så extra bredd
-   sticker ut i marginalen till höger utan att påverka vänsterinnehållet.
-   Selektorn matchar bara det exakta menymönstret — sidor utan menyn berörs ej.
-   Brytpunkt 1400px: kolumnen är ~240px, +30% ≈ 72px, vilket ryms i
-   containerpadding (40px) + sidmarginal utan horisontell scroll. */
-@media (min-width: 1400px) {
+   Listan är position:absolute (panelen är dess positioneringskontext) och
+   ligger utanför flödet, så extra bredd sticker ut åt höger utan att påverka
+   vänsterinnehållet. Selektorn matchar bara det exakta menymönstret —
+   sidor utan menyn berörs ej.
+   Bredden växer gradvis med ledig yta: (100vw − 1240px)/2 motsvarar
+   marginalen utanför containern (max 1200px + 40px padding) med god
+   säkerhetsmarginal för scrollbar — max +30% (~72px) nås vid ~1384px. */
+@media (min-width: 1280px) {
   .uk-width-1-5\@m .uk-panel > ul.uk-list.uk-tile-secondary.uk-position-absolute {
-    width: 130% !important;
+    width: min(130%, calc(100% + (100vw - 1240px) / 2)) !important;
   }
 }
