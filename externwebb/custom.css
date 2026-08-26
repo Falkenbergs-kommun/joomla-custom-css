@@ -234,3 +234,15 @@ a.doclink span:last-of-type::before {
 .uk-link {
   overflow-wrap: break-word;
 }
+
+/* Högermeny (undersidesmeny i 1/5-kolumn): bredda åt höger på stora skärmar.
+   Listan är position:absolute och ligger utanför flödet, så extra bredd
+   sticker ut i marginalen till höger utan att påverka vänsterinnehållet.
+   Selektorn matchar bara det exakta menymönstret — sidor utan menyn berörs ej.
+   Brytpunkt 1400px: kolumnen är ~240px, +30% ≈ 72px, vilket ryms i
+   containerpadding (40px) + sidmarginal utan horisontell scroll. */
+@media (min-width: 1400px) {
+  .uk-width-1-5\@m .uk-panel > ul.uk-list.uk-tile-secondary.uk-position-absolute {
+    width: 130% !important;
+  }
+}
