@@ -251,3 +251,17 @@ a.doclink span:last-of-type::before {
     max-width: none !important;
   }
 }
+
+/* Innehållsförteckning (JP Automatic TOC) ovanför innehållet i mobil.
+   Elementet ligger i högerkolumnen i en 1/5|3/5|1/5-rad och staplas
+   annars sist under @m (960px). Den tomma vänsterkolumnen får
+   uk-grid-margin av UIkits grid-JS när den hamnar på rad 2, vilket
+   annars dubblar avståndet till innehållet (60px i stället för 30px). */
+@media (max-width: 959px) {
+  .uk-grid > div:has(> .uk-panel > .jp_toc_div) {
+    order: -1;
+  }
+  .uk-grid:has(> div > .uk-panel > .jp_toc_div) > div:not(:has(*)) {
+    margin-top: 0;
+  }
+}
