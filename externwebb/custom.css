@@ -110,35 +110,240 @@ background-color: #000 !important;
 	box-sizing: border-box; /* Säkerställer att padding inkluderas i bredden */
 }
 
-/* Cludo SERP */
-li.search-results-item a {
-	text-decoration: none;
+/* ==========================================================================
+   CLUDO SERP — träffkort, banner, facetter och AI-sammanfattning (2026-09-14)
+   Markup: #cludo-search-results > .search-filters (#facet-list)
+           + .search-result-count / .search-did-you-mean / .search-results
+           .search-results > .cludo-banner + ul > li.search-results-item > a > (h2, p, span.path)
+   OBS: Cludos egen cludo-search.min.css laddas EFTER custom.css i <head>.
+   Vid lika specificitet vinner därför Cludo — de regler som är markerade
+   med !important nedan är exakt de som annars körs över. */
+/* ========================================================================== */
+
+/* Resultatlista */
+#cludo-search-results .search-results > ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
-li.search-results-item a:hover {
-	text-decoration: none;
+/* Räknare och "menade du" */
+/* !important: elementen har uk-margin-small-bottom i markupen och UIkits
+   marginalklasser är !important (10px). */
+#cludo-search-results .search-result-count,
+#cludo-search-results .search-did-you-mean {
+    color: #4e506c;
+    font-size: 0.95rem;
+    margin-bottom: 16px !important;
+}
+#cludo-search-results .search-did-you-mean:empty {
+    display: none;
 }
 
-li.search-results-item a h2:hover {
-	text-decoration: underline;
+/* Träffkort */
+#cludo-search-results li.search-results-item {
+    background: #fff;
+    border: 1px solid #d3d8e2;
+    border-left: 4px solid #d3d8e2;
+    border-radius: 8px;
+    padding: 0;
+    /* !important: Cludo sätter margin-top/bottom: 30px med samma specificitet */
+    margin: 0 0 14px !important;
+    transition: border-color .15s ease, box-shadow .15s ease;
+}
+#cludo-search-results li.search-results-item:hover,
+#cludo-search-results li.search-results-item:focus-within {
+    border-color: #1f4e99;
+    box-shadow: 0 2px 10px rgba(19, 21, 59, .08);
+}
+#cludo-search-results li.search-results-item > a {
+    display: block;
+    padding: 18px 22px 16px;
+    text-decoration: none;
+    color: inherit;
+}
+#cludo-search-results li.search-results-item > a:focus-visible {
+    outline: 3px solid #ffd000;
+    outline-offset: -3px;
+    border-radius: 8px;
 }
 
-li.search-results-item p {
-	margin-bottom: 5px;
+/* Rubrik. !important: customizerns egen CSS i theme.12.css sätter
+   h2,h3,h4 { margin: 10px 0 5px 0 !important } globalt — utan detta får
+   rubriken 10px topmarginal ovanpå kortets 18px padding. */
+#cludo-search-results li.search-results-item h2 {
+    font-family: Montserrat, Lato, sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #1f4e99;
+    margin: 0 0 6px !important;
+}
+#cludo-search-results li.search-results-item > a:hover h2 {
+    text-decoration: underline;
+    text-underline-offset: 3px;
 }
 
-li.search-results-item span.path {
-	font-size: small;
-	color: #1f4e99;
-	margin-top: 0;
+/* Utdrag */
+#cludo-search-results li.search-results-item p {
+    font-size: 1rem;
+    line-height: 1.55;
+    color: #1f1f1f;
+    margin: 0 0 8px;
+}
+#cludo-search-results li.search-results-item p b {
+    font-weight: 700;
+    color: #13153B;
+}
+#cludo-search-results li.search-results-item h2 b {
+    font-weight: 700;
+    color: inherit;
 }
 
-li.search-results-item {
-    border-bottom: 1px solid #ccc; /* En tunn linje med ljusgrå färg */
-    padding-bottom: 8px; /* Lägg till lite utrymme mellan innehållet och linjen, valfritt */
-    margin-bottom: 8px; /* Lägg till lite utrymme under varje objekt, valfritt */
+/* Sökväg. word-break: normal nollar Cludos word-break: break-all, som annars
+   kapar sökvägen mitt i ett ord — overflow-wrap: anywhere bryter bara där det
+   behövs (jfr avstavningsregeln i CLAUDE.md). */
+#cludo-search-results li.search-results-item span.path {
+    display: block;
+    font-size: 0.85rem;
+    color: #4e506c;
+    margin: 0;
+    word-break: normal;
+    overflow-wrap: anywhere;
 }
 
+/* Banner (snabblänkar från MyCludo) */
+#cludo-search-results .cludo-banner .uk-alert {
+    background: #F6F9FC;
+    border: 1px solid #C5D7F3;
+    border-left: 4px solid #ffd000;
+    border-radius: 8px;
+    padding: 16px 22px;
+    margin: 0 0 20px;
+}
+#cludo-search-results .cludo-banner .uk-alert h2 {
+    font-family: Montserrat, Lato, sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: .04em;
+    color: #13153B;
+    margin: 0 0 8px !important; /* se h2-kommentaren ovan */
+}
+#cludo-search-results .cludo-banner .uk-alert p {
+    margin: 0 0 4px;
+}
+#cludo-search-results .cludo-banner .uk-alert p:empty {
+    display: none;
+}
+#cludo-search-results .cludo-banner .uk-alert a {
+    color: #1f4e99;
+    font-weight: 700;
+    text-decoration: none;
+}
+#cludo-search-results .cludo-banner .uk-alert a::before {
+    content: "\203A\00a0";
+}
+#cludo-search-results .cludo-banner .uk-alert a:hover {
+    text-decoration: underline;
+}
+
+/* Facetter (kategorier) */
+#cludo-search-results #facet-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+#cludo-search-results #facet-list li {
+    margin: 0 0 4px;
+}
+#cludo-search-results #facet-list a {
+    display: block;
+    padding: 7px 12px;
+    border-radius: 6px;
+    color: #1f1f1f;
+    text-decoration: none;
+    line-height: 1.35;
+}
+#cludo-search-results #facet-list a:hover {
+    background: #F6F9FC;
+    color: #1f4e99;
+}
+#cludo-search-results #facet-list a.active {
+    background: #1f4e99;
+    color: #fff;
+    font-weight: 700;
+}
+
+/* AI-sammanfattning: ingen versal på varje ord i rubriken, samma typsnitt som sajten */
+#cludo-search-results .cludo-ai-summary .cludo-generative-ai__header {
+    text-transform: none;
+    font-family: Montserrat, Lato, sans-serif;
+}
+#cludo-search-results cludo-element[data-type="AISummaryModule"] {
+    margin-bottom: 20px;
+}
+
+/* Paginering */
+#cludo-search-results .cludo-page-navigation {
+    margin-top: 24px;
+}
+#cludo-search-results .search_page_list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding: 0;
+    margin: 0;
+}
+/* !important: Cludo sätter width: 31px och padding: 7px 5px 7px 0 på li med
+   högre specificitet, vilket får sidknapparna (min-width: 40px) att spilla
+   utanför sin flexruta. */
+#cludo-search-results .search_page_list li {
+    margin: 0;
+    width: auto !important;
+    padding: 0 !important;
+}
+#cludo-search-results .search_page_list li a,
+#cludo-search-results .search_page_list li.active {
+    display: inline-block;
+    min-width: 40px;
+    padding: 8px 12px !important;
+    border: 1px solid #d3d8e2;
+    border-radius: 6px;
+    text-align: center;
+    color: #1f4e99;
+    font-weight: 700;
+    text-decoration: none;
+    line-height: 1.2;
+}
+#cludo-search-results .search_page_list li a:hover {
+    background: #F6F9FC;
+    border-color: #1f4e99;
+}
+#cludo-search-results .search_page_list li.active {
+    background: #1f4e99;
+    border-color: #1f4e99;
+    color: #fff;
+}
+/* !important: Cludo döljer .cludo-sr-only helt (display: none) med samma
+   specificitet. Klippt 1×1-yta gör "(current)" läsbar för skärmläsare igen. */
+#cludo-search-results .cludo-sr-only {
+    display: inline !important;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+}
+
+@media (max-width: 640px) {
+    #cludo-search-results li.search-results-item > a {
+        padding: 14px 16px 12px;
+    }
+    #cludo-search-results li.search-results-item h2 {
+        font-size: 1.1rem;
+    }
+}
 
 .jp-menyknapp {
     font-weight: 700;

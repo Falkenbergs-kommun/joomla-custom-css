@@ -39,6 +39,26 @@ Before adding a rule to `custom.css`, investigate whether the styling issue is a
 - Known intranet customizer values: global margin `.uk-margin` = **40px** and `.uk-margin-small` = **24px** (UIkit defaults: 20/10px). This explains most "too much vertical spacing" issues between builder elements. Headings and paragraphs use 20px margins, so normal text rhythm is 20px.
 - Fall back to `custom.css` when the customizer can't target the case (contextual rules like "ingress directly after h1") or when changing the global setting would affect the whole site.
 
+## Third-party stylesheets load *after* `custom.css`
+
+`custom.css` is linked early in `<head>` (position ~24 on externwebb); stylesheets pulled in by third-party
+components load after it. On equal specificity the third party therefore wins, so a rule that *looks* strong
+enough on paper can still be dead. Verify in the rendered page, not from the selector.
+
+- Check load order: `curl -s <url> | grep -o '<link[^>]*rel="stylesheet"[^>]*>'` and compare positions.
+- Ask the browser which rule actually won, rather than guessing — headless Chrome + CDP
+  (`CSS.getMatchedStylesForNode`, or compare `getComputedStyle` before/after setting the declaration inline
+  with `setProperty(prop, value, 'important')`). The compiled `theme.*.css` also carries customizer Custom CSS
+  with `!important` (externwebb: `h2,h3,h4 { margin: 10px 0 5px 0 !important }`), and UIkit's own margin
+  utilities (`.uk-margin-small-bottom` = `10px !important`) beat anything without `!important`.
+- Document *why* each `!important` is there in a comment next to the rule — which stylesheet it answers.
+
+**Cludo search (externwebb)**: the SERP is `/search`, and the search is driven by **hash** parameters
+(`/search#?cludoquery=<term>&cludopage=1`); a plain `?cludoquery=` renders an empty page. `#cludo-search-results`
+is hand-built markup in the YOOtheme builder; Cludo injects `.cludo-banner`, `ul > li.search-results-item > a >
+(h2, p, span.path)` and `nav.cludo-page-navigation`. Its own `cludo-search.min.css` sets `margin: 30px 0` on
+result items, `width: 31px` on pagination items, `word-break: break-all` on `.path` and hides `.cludo-sr-only`.
+
 ## CSS conventions
 
 - The stylesheet targets **UIkit 3** (YOOtheme's framework) — selectors use `.uk-*` classes extensively.
