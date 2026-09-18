@@ -16,7 +16,7 @@ custom-styles-yootheme/
 ├── externwebb/           # Externwebben (kommun.falkenberg.se)
 ├── gymnasiehalland/      # Gymnasie Halland (gymnasiehalland.se)
 ├── gymnasieskolan/       # Falkenbergs gymnasieskola (falkenbergsgymnasieskola.se)
-├── intranet/             # Intranätet (dev-intra.falkenberg.se)
+├── intranet/             # Intranätet (utvecklingsmiljön)
 ├── klitterbadet/         # Klitterbadet (klitterbadet.se)
 └── vuxenutbildningen/    # Vuxenutbildningen (vuxenutbildningenfalkenberg.se)
 ```

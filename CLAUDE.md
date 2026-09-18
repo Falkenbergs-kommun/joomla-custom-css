@@ -11,7 +11,7 @@ This repo is the **single source of truth** for custom CSS overrides used by YOO
 Files are deployed via **absolute symlinks** from the Joomla template directory back to this repo:
 
 ```
-/home/httpd/fbg-intranet/dev-intra.falkenberg.se/templates/yootheme_child/css/custom.css
+/home/httpd/fbg-intranet/intranet.example.com/templates/yootheme_child/css/custom.css
   → /home/httpd/fbg-intranet/joomlaextensions/custom-styles-yootheme/intranet/custom.css
 ```
 
@@ -25,7 +25,7 @@ Changes to CSS files here take effect immediately on the corresponding site — 
 - `externwebb/` — External website (kommun.falkenberg.se)
 - `gymnasiehalland/` — Gymnasie Halland (gymnasiehalland.se)
 - `gymnasieskolan/` — Falkenbergs gymnasieskola (falkenbergsgymnasieskola.se)
-- `intranet/` — Intranet (dev-intra.falkenberg.se)
+- `intranet/` — Intranet (intranet.example.com)
 - `klitterbadet/` — Klitterbadet (klitterbadet.se)
 - `vuxenutbildningen/` — Vuxenutbildningen (vuxenutbildningenfalkenberg.se)
 

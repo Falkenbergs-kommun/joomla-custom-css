@@ -135,5 +135,5 @@ Kontrollera särskilt:
 ## Filreferenser
 
 - **custom.css:** `/home/httpd/fbg-intranet/joomlaextensions/custom-styles-yootheme/intranet/custom.css`
-- **Symlänk:** `/home/httpd/fbg-intranet/dev-intra.falkenberg.se/templates/yootheme_child/css/custom.css` → ovanstående
-- **Tema-CSS:** `/home/httpd/fbg-intranet/dev-intra.falkenberg.se/templates/yootheme_child/css/theme.9.css` (minifierad)
+- **Symlänk:** `/home/httpd/fbg-intranet/intranet.example.com/templates/yootheme_child/css/custom.css` → ovanstående
+- **Tema-CSS:** `/home/httpd/fbg-intranet/intranet.example.com/templates/yootheme_child/css/theme.9.css` (minifierad)
