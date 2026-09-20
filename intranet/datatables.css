@@ -38,13 +38,23 @@ div.dt-button-collection {
 	box-shadow: 0 5px 15px rgba(0, 0, 0, .12);
 }
 
-/* Bredden begränsas på den INRE menyn, inte på behållaren.
-   Anledningen: SearchPanes-panelen öppnas i samma div.dt-button-collection,
-   men har ingen [role="menu"] inuti. En max-width på behållaren klämde därför
-   ihop filterpanelerna till en enda smal kolumn. */
+/* Bredden begränsas på den INRE menyn, inte på behållaren, eftersom
+   SearchPanes-panelen öppnas i samma div.dt-button-collection och en
+   max-width på behållaren klämde ihop filterpanelerna till en smal kolumn.
+
+   OBS: Buttons _popover sätter role="menu" på innehålls-diven för ALLA
+   knapptyper, även SearchPanes. Rollen räcker alltså inte som särskiljare -
+   :has() krävs för att undanta panelen. Stöds av Chrome 105+, Firefox 121+
+   och Safari 15.4+. */
 div.dt-button-collection > [role="menu"] {
 	min-width: 220px;
 	max-width: 340px;
+}
+
+div.dt-button-collection:has(div.dtsp-panesContainer) > [role="menu"] {
+	min-width: 0;
+	max-width: none;
+	width: 100%;
 }
 
 /* Listposterna: en rad per kolumn, inga pillerformer.
@@ -229,10 +239,10 @@ div.dt-button-collection div.dtsp-panesContainer {
 	margin: 0;
 }
 
-/* Luft mellan panelerna, och en tydlig ram runt varje. */
+/* Luft mellan panelerna. Bredden lamnas till bundlens dtsp-columns-N,
+   som satter min-width och max-width i procent. */
 div.dtsp-searchPanes div.dtsp-searchPane {
-	margin: 8px 0 !important;
-	padding: 0 6px;
+	margin: 10px 0 !important;
 	box-sizing: border-box;
 }
 
