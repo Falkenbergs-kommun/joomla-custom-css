@@ -8,10 +8,20 @@
  * Falkenbergs intranät. Laddas EFTER datatables.min.css och efter modulens
  * egen CSS, så att den vinner över YOOtheme-temats knappstilar.
  *
- * Bakgrund: bundlens egen Buttons-CSS (2.4.2) renderar redan listposterna
- * korrekt som helbreda, vänsterställda rader. Temat stylar dock <button>
- * och ger posterna mörka pillerformer med ojämna bredder. Reglerna nedan
- * återställer listlooken och ger den UIkit-känsla resten av intranätet har.
+ * Bakgrund: bundlens egen Buttons-CSS (2.4.2) renderar listposterna korrekt
+ * som helbreda, vänsterställda rader - men bara när de har klassen dt-button.
+ *
+ * TVÅ DOM-VARIANTER. Ett script som sätter
+ *     buttons: { dom: { button: { className: 'uk-button ...' } } }
+ * ERSÄTTER dt-button i stället för att komplettera den. Posterna heter då
+ * bara uk-button uk-button-default ..., DataTables egna regler matchar
+ * ingenting, och temats knappstil tar över - mörka pillerformer med ojämna
+ * bredder. Så gör t.ex. smartkortfaktura.js, docmanfolder.js och
+ * contactlist.js, medan apicostdashboard.js och smartkortbemanning.js
+ * behåller dt-button.
+ *
+ * Selektorerna nedan täcker därför båda varianterna, och matchar på
+ * behållaren (div.dt-button-collection) i stället för på knappklassen.
  *
  * Använd tillsammans med { fade: 0, background: false } på colvis-knappen.
  */
@@ -32,9 +42,11 @@ div.dt-button-collection {
 
 /* Listposterna: en rad per kolumn, inga pillerformer.
    Selektorn matchar både 1.6.3:s och 2.4.2:s markup. */
-div.dt-button-collection button.dt-button,
+div.dt-button-collection button,
 div.dt-button-collection a.dt-button,
-div.dt-button-collection div.dt-button {
+div.dt-button-collection div.dt-button,
+div.dt-button-collection button.dt-button,
+div.dt-button-collection button.uk-button {
 	position: relative;
 	display: block;
 	float: none;
@@ -55,30 +67,33 @@ div.dt-button-collection div.dt-button {
 	cursor: pointer;
 }
 
-div.dt-button-collection button.dt-button:hover:not(.disabled),
-div.dt-button-collection a.dt-button:hover:not(.disabled) {
+div.dt-button-collection button:hover:not(.disabled),
+div.dt-button-collection a.dt-button:hover:not(.disabled),
+div.dt-button-collection button.uk-button:hover:not(.disabled) {
 	border: 0;
 	background: rgba(0, 0, 0, .05);
 	box-shadow: none;
 	color: inherit;
 }
 
-div.dt-button-collection button.dt-button:focus-visible {
+div.dt-button-collection button:focus-visible {
 	outline: 2px solid #1e87f0;
 	outline-offset: -2px;
 }
 
 /* Vald kolumn: bocken till höger.
    2.4.2 sätter .dt-button-active, 1.6.3 satte .active - täck båda. */
-div.dt-button-collection button.dt-button.dt-button-active,
-div.dt-button-collection button.dt-button.active {
+div.dt-button-collection button.dt-button-active,
+div.dt-button-collection button.active,
+div.dt-button-collection button.uk-button.dt-button-active {
 	background: none;
 	box-shadow: none;
 	font-weight: 600;
 }
 
-div.dt-button-collection button.dt-button.dt-button-active::after,
-div.dt-button-collection button.dt-button.active::after {
+div.dt-button-collection button.dt-button-active::after,
+div.dt-button-collection button.active::after,
+div.dt-button-collection button.uk-button.dt-button-active::after {
 	position: absolute;
 	top: 50%;
 	right: 12px;
