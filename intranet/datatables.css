@@ -30,14 +30,21 @@
    som klipper längre kolumnnamn. */
 div.dt-button-collection {
 	width: auto;
-	min-width: 220px;
-	max-width: 340px;
 	padding: 6px 0;
 	overflow: visible;
 	border: 1px solid rgba(0, 0, 0, .15);
 	border-radius: 4px;
 	background-color: #fff;
 	box-shadow: 0 5px 15px rgba(0, 0, 0, .12);
+}
+
+/* Bredden begränsas på den INRE menyn, inte på behållaren.
+   Anledningen: SearchPanes-panelen öppnas i samma div.dt-button-collection,
+   men har ingen [role="menu"] inuti. En max-width på behållaren klämde därför
+   ihop filterpanelerna till en enda smal kolumn. */
+div.dt-button-collection > [role="menu"] {
+	min-width: 220px;
+	max-width: 340px;
 }
 
 /* Listposterna: en rad per kolumn, inga pillerformer.
@@ -205,5 +212,64 @@ div.dataTables_wrapper div.dataTables_paginate ul.uk-pagination {
 	div.dataTables_wrapper div.dataTables_filter input.uk-input {
 		width: 100%;
 		min-width: 0;
+	}
+}
+
+/* =========================================================================
+   SearchPanes-panelen (knappen "Kolumnfilter")
+
+   Öppnas i samma behållare som kolumnlistan, men med span: "container", så
+   den ska få ta hela tabellens bredd. Antalet kolumner styrs av
+   searchPanes.layout i modulens JS (columns-3), medan bundlens egna
+   mediafrågor staplar panelerna under 640 px.
+   ========================================================================= */
+
+div.dt-button-collection div.dtsp-panesContainer {
+	padding: 4px 8px 8px;
+	margin: 0;
+}
+
+/* Luft mellan panelerna, och en tydlig ram runt varje. */
+div.dtsp-searchPanes div.dtsp-searchPane {
+	margin: 8px 0 !important;
+	padding: 0 6px;
+	box-sizing: border-box;
+}
+
+div.dtsp-searchPane div.dataTables_wrapper {
+	border: 1px solid rgba(0, 0, 0, .12);
+	border-radius: 4px;
+}
+
+/* Rubrikraden i varje panel. */
+div.dtsp-searchPane div.dtsp-topRow {
+	padding: 2px 4px;
+}
+
+/* Knappraden överst (Rensa / Visa alla / Dölj alla) är vanliga dt-buttons och
+   fångas annars av listpost-reglerna ovan, vilket gör dem helbreda. Här vill vi
+   ha dem bredvid varandra i stället. */
+div.dt-button-collection div.dtsp-panesContainer button.dtsp-clearAll,
+div.dt-button-collection div.dtsp-panesContainer button.dtsp-showAll,
+div.dt-button-collection div.dtsp-panesContainer button.dtsp-collapseAll {
+	display: inline-block;
+	width: auto;
+	padding: 4px 10px;
+	float: none;
+	border-radius: 3px;
+}
+
+div.dt-button-collection div.dtsp-panesContainer div.dtsp-title {
+	float: none;
+	display: inline-block;
+	margin-right: 1em;
+	font-weight: 600;
+}
+
+/* Mellanbredder: två kolumner i stället för tre. */
+@media (min-width: 641px) and (max-width: 1100px) {
+	div.dtsp-searchPanes div.dtsp-columns-3 {
+		max-width: 48% !important;
+		min-width: 48% !important;
 	}
 }
