@@ -132,8 +132,32 @@ Kontrollera särskilt:
 
 ---
 
+## DataTables (datatables.css)
+
+Egen fil, skild fran `custom.css`, for DataTables Buttons-kollektioner
+(kolumnvaljaren `colvis`). Laddas av de moduler som anvander DataTables.
+
+**Problemet:** YOOtheme-temat stylar naket `<button>`, vilket slar DataTables
+egna regler for `div.dt-button-collection .dt-button`. Kolumnlistan blir da
+morka pillerformer med ojamna bredder i stallet for en lista.
+
+**Losningen:** reglerna i `datatables.css` aterstaller listlooken och maste
+darfor laddas **sist** i modulen, efter bade `datatables.min.css` och
+modulens egen CSS.
+
+Anvands tillsammans med `{ fade: 0, background: false }` pa colvis-knappen -
+utan dem tonas listan in over 400 ms och sidan dimmas av en overlay, vilket
+ar Buttons 2.x standardbeteende.
+
+Moduler som laddar den: `mod_fbg_apicostdashboard`,
+`mod_fbg_smartkortbemanning`, `mod_fbg_svf_smartkortfaktura`.
+
+---
+
 ## Filreferenser
 
 - **custom.css:** `/home/httpd/fbg-intranet/joomlaextensions/custom-styles-yootheme/intranet/custom.css`
 - **Symlänk:** `/home/httpd/fbg-intranet/intranet.example.com/templates/yootheme_child/css/custom.css` → ovanstående
 - **Tema-CSS:** `/home/httpd/fbg-intranet/intranet.example.com/templates/yootheme_child/css/theme.9.css` (minifierad)
+- **datatables.css:** `/home/httpd/fbg-intranet/joomlaextensions/custom-styles-yootheme/intranet/datatables.css`
+- **Symlänk:** `/home/httpd/fbg-intranet/intranet.example.com/fbg_apps/js/framework/datatables/fbg-dt-uikit.css` → ovanstående
