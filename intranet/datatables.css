@@ -114,3 +114,96 @@ div.dtb-popover-close {
 div.dtb-popover-close:hover {
 	color: rgba(0, 0, 0, .8);
 }
+
+/* =========================================================================
+   Kontrollraderna (radantal, filter, info, paginering)
+
+   DataTables bygger kontrollerna som <label>Visa <select> rader</label> och
+   förutsätter inline-element. UIkits .uk-select och .uk-input är däremot
+   display:block med width:100%, så fältet spränger sin etikett och "Visa",
+   fältet och "rader" hamnar på var sin rad.
+
+   Det finns en dataTables.uikit.min.css från 2022 med liknande regler, men
+   ingen modul laddar den (bara .js-motsvarigheten), och den är skriven för
+   DataTables 1.10. Reglerna nedan gör samma jobb mot 1.13-markupen.
+   ========================================================================= */
+
+/* Topprad: knappar, radantal och filter bredvid varandra.
+   På sidor vars dom-sträng redan lägger dem i en uk-flex-behållare
+   (t.ex. apicostdashboard) blir de flex-items och float ignoreras ändå. */
+div.dataTables_wrapper div.dt-buttons,
+div.dataTables_wrapper div.dataTables_length,
+div.dataTables_wrapper div.dataTables_filter {
+	display: inline-block;
+	float: none;
+	vertical-align: middle;
+	margin: 0 1.5em .75em 0;
+}
+
+div.dataTables_wrapper div.dataTables_filter {
+	margin-right: 0;
+}
+
+/* Etiketten håller ihop text och fält, med jämn luft utan mellanslagshack. */
+div.dataTables_wrapper div.dataTables_length label,
+div.dataTables_wrapper div.dataTables_filter label {
+	display: inline-flex;
+	align-items: center;
+	gap: .5em;
+	margin: 0;
+	font-weight: normal;
+	white-space: nowrap;
+}
+
+/* Gör UIkits formulärfält inline igen. */
+div.dataTables_wrapper div.dataTables_length select,
+div.dataTables_wrapper div.dataTables_length select.uk-select {
+	display: inline-block;
+	width: auto;
+	min-width: 5rem;
+}
+
+div.dataTables_wrapper div.dataTables_filter input,
+div.dataTables_wrapper div.dataTables_filter input.uk-input {
+	display: inline-block;
+	width: auto;
+	min-width: 16rem;
+}
+
+/* Bottenrad: radräknare och paginering på samma rad. */
+div.dataTables_wrapper div.dataTables_info,
+div.dataTables_wrapper div.dataTables_paginate {
+	display: inline-block;
+	vertical-align: middle;
+	margin-top: .75em;
+}
+
+div.dataTables_wrapper div.dataTables_info {
+	margin-right: 1.5em;
+	color: rgba(0, 0, 0, .6);
+	font-size: .875rem;
+}
+
+div.dataTables_wrapper div.dataTables_paginate ul.uk-pagination {
+	margin: 0;
+}
+
+/* Mobil: staplat, och filtret får hela bredden. */
+@media (max-width: 640px) {
+	div.dataTables_wrapper div.dt-buttons,
+	div.dataTables_wrapper div.dataTables_length,
+	div.dataTables_wrapper div.dataTables_filter {
+		display: block;
+		margin-right: 0;
+	}
+
+	div.dataTables_wrapper div.dataTables_filter label {
+		display: flex;
+	}
+
+	div.dataTables_wrapper div.dataTables_filter input,
+	div.dataTables_wrapper div.dataTables_filter input.uk-input {
+		width: 100%;
+		min-width: 0;
+	}
+}
