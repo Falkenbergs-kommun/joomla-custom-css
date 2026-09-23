@@ -360,9 +360,20 @@ a:hover .falkmenu-title {
 	background-color: #607ebe;
 }
 
-/* Marginal nedtill efter punkt i punktlista */
-#tm-main ul ol li {
-    margin-bottom: 0.5em;  /* Sätter radavstånd till 1,5 */
+/* === LISTOR I BRÖDTEXT === */
+/* Avstånd mellan punkter i brödtextlistor. Temat sätter ingen marginal på li, så
+   avståndet mellan två punkter är lika med radavståndet inom en punkt (28,875px)
+   och man ser inte var en ny punkt börjar. 0.5em = 8,25px ovanpå radavståndet.
+
+   li + li  → bara punkt 2..n får marginal; inget extra ovanför första eller under sista.
+   :not([class]) → menyer/navigation i UIkit har alltid klass (uk-nav, uk-navbar-nav,
+                   uk-subnav, uk-breadcrumb, uk-list, uk-dotnav ...) och lämnas orörda.
+   :not(nav *)   → JP Automatic TOC (nav.js-auto-toc) och Cludos facettlista
+                   (nav.search-filters) har klasslösa nästlade ul.
+   :not(#cludo-search-results *) → Cludos resultatlista är en klasslös ul med egna
+                   marginaler (se Cludo-sektionen ovan). */
+#tm-main :is(ul, ol):not([class]):not(nav *):not(#cludo-search-results *) > li + li {
+    margin-top: 0.5em;
 }
 
 /* RS Form  */
