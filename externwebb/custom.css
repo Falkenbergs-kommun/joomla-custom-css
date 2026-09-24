@@ -398,6 +398,21 @@ a:hover .falkmenu-title {
     color: #000;
 }
 
+/* Mer luft efter siffran i numrerade listor. Markören ligger utanför (outside) och
+   slutar där punktens innehåll börjar, så "1." hamnar tätt intill texten medan
+   punkten i en ul får naturligt mellanrum. Lösning: flytta 0.4em av listans
+   indrag (temat: ol, ul { padding-left: 30px }) in i li. Texten står då kvar på
+   exakt samma x som i en punktlista (verifierat: 345,5px i båda), och siffran
+   skjuts 0.4em utåt. Fungerar i alla webbläsare, till skillnad från
+   `::marker { content }` som Safari före 17.4 ignorerar. */
+#tm-main ol:is(:not([class]), .normal, .bulletList, [class*="BulletListStyle"]):not(nav *):not(#cludo-search-results *):not(.contactInfoList__items):not(.contactInfoList__pages):not(.blueIconBox__items) {
+    padding-left: calc(30px - 0.4em);
+}
+
+#tm-main ol:is(:not([class]), .normal, .bulletList, [class*="BulletListStyle"]):not(nav *):not(#cludo-search-results *):not(.contactInfoList__items):not(.contactInfoList__pages):not(.blueIconBox__items) > li {
+    padding-left: 0.4em;
+}
+
 /* RS Form  */
 
 .rsform-submit-button {
