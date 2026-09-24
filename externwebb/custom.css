@@ -381,6 +381,23 @@ a:hover .falkmenu-title {
     margin-top: 0.5em;
 }
 
+/* Länkar i brödtextlistor ska se ut som länkar i stycken. Customizerns Custom CSS
+   sätter bara `p a { text-decoration: underline; color: #1f4e99 }`, så en länk
+   direkt i ett li ärver temats `a { color: #000; text-decoration: none }` och
+   syns inte som länk. Samma listavgränsning som ovan, så menyer, brödsmulor,
+   uk-list-moduler och Cludo berörs inte. :not(.uk-button) lämnar knappar i fred.
+   Hover: temats `a:hover { color: #000 }` (0,1,1) vinner över `p a` (0,0,2) och
+   gör styckelänkar svarta; id-selektorn här vinner över a:hover, så samma
+   beteende sätts uttryckligen för att listlänkar ska bete sig likadant. */
+#tm-main :is(ul, ol):is(:not([class]), .normal, .bulletList, [class*="BulletListStyle"]):not(nav *):not(#cludo-search-results *):not(.contactInfoList__items):not(.contactInfoList__pages):not(.blueIconBox__items) li a:not(.uk-button) {
+    text-decoration: underline;
+    color: #1f4e99;
+}
+
+#tm-main :is(ul, ol):is(:not([class]), .normal, .bulletList, [class*="BulletListStyle"]):not(nav *):not(#cludo-search-results *):not(.contactInfoList__items):not(.contactInfoList__pages):not(.blueIconBox__items) li a:not(.uk-button):hover {
+    color: #000;
+}
+
 /* RS Form  */
 
 .rsform-submit-button {
