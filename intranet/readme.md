@@ -149,8 +149,8 @@ Anvands tillsammans med `{ fade: 0, background: false }` pa colvis-knappen -
 utan dem tonas listan in over 400 ms och sidan dimmas av en overlay, vilket
 ar Buttons 2.x standardbeteende.
 
-Moduler som laddar den: `mod_fbg_apicostdashboard`,
-`mod_fbg_smartkortbemanning`, `mod_fbg_svf_smartkortfaktura`.
+Moduler som laddar den: `mod_fbg_apicostdashboard`, `mod_fbg_facklig`,
+`mod_fbg_smartkortbemanning`, `mod_fbg_svf_smartkortfaktura`, `mod_fbg_vscope`.
 
 ---
 
