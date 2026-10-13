@@ -49,7 +49,7 @@ enough on paper can still be dead. Verify in the rendered page, not from the sel
 - Ask the browser which rule actually won, rather than guessing — headless Chrome + CDP
   (`CSS.getMatchedStylesForNode`, or compare `getComputedStyle` before/after setting the declaration inline
   with `setProperty(prop, value, 'important')`). The compiled `theme.*.css` also carries customizer Custom CSS
-  with `!important` (externwebb: `h2,h3,h4 { margin: 10px 0 5px 0 !important }`), and UIkit's own margin
+  with `!important` (externwebb had `h2,h3,h4 { margin: 10px 0 5px 0 !important }` until 2026-10-13, when the base typography was aligned with the intranet), and UIkit's own margin
   utilities (`.uk-margin-small-bottom` = `10px !important`) beat anything without `!important`.
 - Document *why* each `!important` is there in a comment next to the rule — which stylesheet it answers.
 

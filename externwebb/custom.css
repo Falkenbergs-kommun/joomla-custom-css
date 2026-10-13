@@ -168,9 +168,9 @@ background-color: #000 !important;
     border-radius: 8px;
 }
 
-/* Rubrik. !important: customizerns egen CSS i theme.12.css sätter
-   h2,h3,h4 { margin: 10px 0 5px 0 !important } globalt — utan detta får
-   rubriken 10px topmarginal ovanpå kortets 18px padding. */
+/* Rubrik. !important: customizerns egen CSS i theme.12.css satte t.o.m. 2026-10-13
+   h2,h3,h4 { margin: 10px 0 5px 0 !important } globalt (regeln togs bort när
+   grundtypografin likriktades med intranätet); !important behålls som skydd. */
 #cludo-search-results li.search-results-item h2 {
     font-family: Montserrat, Lato, sans-serif;
     font-size: 1.25rem;
@@ -517,4 +517,20 @@ a.doclink span:last-of-type::before {
   .uk-grid:has(> div > .uk-panel > .jp_toc_div) > div:not(:has(*)) {
     margin-top: 0;
   }
+}
+
+/* === TEXTKNAPPAR MED RUBRIKSTORLEK (.fbg-textknapp) === */
+/* Knappelement i byggaren ("Hitta snabbt" på startsidan, Falkenberg växer, kulturskolan
+   m.fl. – 97 element i 50 artiklar 2026-10-13) hade klassen uk-h4 på elementet så att
+   länkarna ärvde h4:ans storlek. När grundtypografin likriktades med intranätet
+   2026-10-13 växte h4 från 19px till 26px, vilket blev för stort för knapparna.
+   Klassen byttes därför till fbg-textknapp, som återger h4:ans tidigare värden
+   (theme.12.css före ändringen: font-size 19px, line-height 1.4, Montserrat 600,
+   letter-spacing 0). Klassen används bara för detta. */
+.fbg-textknapp {
+    font-family: Montserrat, Lato, sans-serif;
+    font-size: 19px;
+    font-weight: 600;
+    line-height: 1.4;
+    letter-spacing: 0;
 }
