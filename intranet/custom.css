@@ -1172,3 +1172,25 @@ a.footermeny:before {
 		margin-right: 45px !important;
 	}
 }
+/* === TYPOGRAFI I MOBIL (<960px) === */
+/* Grundtypografin (20px bas, h3 30px, h4 26px) är gemensam för kommunwebben och intranätet
+   sedan 2026-10-13. Customizern kan bara ge h1 och h2 en egen mobilstorlek (UIkit har
+   brytpunktsvariabler enbart för dem), och clamp() i customizern kompilerar inte i LESS.
+   Därför minskas resten här, under samma brytpunkt (@m = 960px) som h1/h2 använder.
+   html 18px: allt som anges i rem följer med (ingressen 1.15rem = 20.7px). Rubrikerna är
+   satta i px i den kompilerade CSS:en och får därför egna rader. Blocket ska vara
+   identiskt i externwebb/ och intranet/. */
+@media (max-width: 959px) {
+    html {
+        font-size: 18px;
+    }
+    h3, .uk-h3 {
+        font-size: 26px;
+    }
+    h4, .uk-h4 {
+        font-size: 22px;
+    }
+    .uk-text-meta {
+        font-size: 18px;
+    }
+}
