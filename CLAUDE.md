@@ -31,6 +31,21 @@ Changes to CSS files here take effect immediately on the corresponding site — 
 
 Additional site directories may be added following the same pattern: `<site-name>/custom.css`
 
+## Rule: the intranet and kommun.falkenberg.se move together
+
+Since 2026-10-13 the base typography (20px base, heading scale, lead/meta/large, mobile sizes below
+960px) is identical on the intranet and the external website, and it must stay that way. Any change to
+shared typography or shared styling is made on **both** sites in the same piece of work:
+
+- Customizer settings under Global / Base / Text / Heading get the same values on both sites. The sites
+  run different presets (`yard` on the intranet, `design-escapes` on externwebb), so compare the compiled
+  CSS (`theme.9.css` vs `theme.12.css`), not the field defaults.
+- Typography blocks in this repo are kept identical in `intranet/custom.css` and `externwebb/custom.css`
+  (for example "TYPOGRAFI I MOBIL"). Site-specific components (Cludo, EasySocial, menus) are exempt.
+- The customizer compiles LESS in the browser and uploads the result, so a database edit never takes
+  effect; it only has mobile fields for h1 and h2, and `clamp()` does not survive the compile. Mobile
+  sizes for everything else live in the custom.css block.
+
 ## Workflow: check the YOOtheme customizer first
 
 Before adding a rule to `custom.css`, investigate whether the styling issue is an effect of YOOtheme **customizer settings**. If the same result can be achieved by moving a customizer setting toward its default, that is preferred. Always explore both the customizer and the custom CSS to decide where the fix is most effective.

@@ -41,6 +41,18 @@ Detta gör att alla CSS-anpassningar versionshanteras på ett ställe, medan Joo
          <sajt-template-sökväg>/css/custom.css
    ```
 
+## Regel: intranätet och kommunwebben följs åt
+
+Sedan 2026-10-13 har intranätet och kommun.falkenberg.se samma grundtypografi (20px bas, rubrikskala,
+ingress/meta/large samt mindre storlekar under 960px), och så ska det förbli. En ändring i gemensam
+typografi eller gemensam styling görs alltid på **båda** sajterna i samma arbete:
+
+- Customizer-inställningar under Global / Base / Text / Heading får samma värden på båda sajterna.
+  Sajterna kör olika preset (`yard` på intranätet, `design-escapes` på externwebben), så jämför den
+  kompilerade CSS:en (`theme.9.css` mot `theme.12.css`), inte fältens utgångsvärden.
+- Typografiblock i detta repo hålls identiska i `intranet/custom.css` och `externwebb/custom.css`
+  (t.ex. "TYPOGRAFI I MOBIL"). Sajtspecifika komponenter (Cludo, EasySocial, menyer) är undantagna.
+
 ## CSS-konventioner
 
 - Stilarna riktar sig mot **UIkit 3** (YOOthemes ramverk) — selektorer använder `.uk-*`-klasser
