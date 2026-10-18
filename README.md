@@ -60,4 +60,7 @@ typografi eller gemensam styling görs alltid på **båda** sajterna i samma arb
 - Egna komponentvarianter använder svenska klassnamn (`.sidebarmenu`, `.falkmenu`, `.menykarta`, `.verksamhetsinformation` m.fl.)
 - `!important` används frekvent för att överskrida YOOthemes kompilerade stilar — detta är medvetet
 - Sektioner separeras med kommentarsbanners: `/* === SEKTIONSNAMN === */`
-- Ikonbilder refereras med absoluta sökvägar från sajtroten (t.ex. `/images/plus.png`)
+- `url()` använder **bara sökvägar från sajtroten** (t.ex. `/images/plus.png`), aldrig `https://<sajt>/…` eller `//…`,
+  och filen ska finnas i **sajtens egen** docroot. Absoluta adresser bryter CSS-masker mellan domäner (CORS) och gör en
+  sajt beroende av en annan sajts servernamn. Externa tjänster (Google Fonts) är enda undantaget och står i `check.sh`.
+  Kör `./check.sh` före commit – GitHub Actions kör den vid varje push.

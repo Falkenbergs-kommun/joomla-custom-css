@@ -42,7 +42,7 @@ content: "";
 width: 1.7em;
 height: 1.7em;
 float: right;
-background-image: url(https://dev-intra.falkenberg.se//images/plus.png);
+background-image: url(/images/plus.png);
 background-repeat: no-repeat;
 background-position: 50% 50%;
 	margin-right:15px
@@ -66,7 +66,7 @@ color: #FFF !important;
 }
 
  .sidebarmenu .uk-nav-parent-icon>.uk-parent.uk-open>a::after{
-background-image: url(https://dev-intra.falkenberg.se/images/minus.png);
+background-image: url(/images/minus.png);
 }
 
  .sidebarmenu .uk-active .uk-nav-parent-icon>.uk-parent.uk-open>a{
@@ -447,7 +447,7 @@ background:none !important
 }
 
 .uk-accordion-title::before {
-    content: url(https://dev-intra.falkenberg.se/images/interface/add_circle_outline_petrol.svg);
+    content: url(/images/interface/add_circle_outline_petrol.svg);
 	margin-left:0px;
     margin-right: 10px;
     float: left;
@@ -458,7 +458,7 @@ background:none !important
 }
 
 .uk-open > .uk-accordion-title::before {
-   content: url(https://dev-intra.falkenberg.se/images/interface/remove_circle_outline_petrol.svg);
+   content: url(/images/interface/remove_circle_outline_petrol.svg);
 	margin-left:0px;
     margin-right: 10px;
     float: left;
@@ -469,7 +469,7 @@ background:none !important
 }
 
 .verksamhetsinformation .uk-accordion-title::before {
-   content: url(https://dev-intra.falkenberg.se/images/interface/add_circle_outline_pink.svg);
+   content: url(/images/interface/add_circle_outline_pink.svg);
 	margin-left:0px;
     margin-right: 10px;
     vertical-align:middle !important;

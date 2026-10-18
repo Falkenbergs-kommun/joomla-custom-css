@@ -24,7 +24,7 @@
 }
 .uk-accordion-title::before {
 background-color: #000 !important;
-  mask: url("https://kommun.falkenberg.se/modules/mod_jp_yootheme_menu/assets/plus-down.svg") no-repeat 50% 50%;
+  mask: url("/modules/mod_jp_yootheme_menu/assets/plus-down.svg") no-repeat 50% 50%;
     mask-size: auto;
   mask-size: 100% !important;
   width: 24px;
@@ -36,7 +36,7 @@ background-color: #000 !important;
   margin-right: 15px;
  }
 .uk-open > .uk-accordion-title::before {
-	mask: url("https://kommun.falkenberg.se/modules/mod_jp_yootheme_menu/assets/plus-up.svg") no-repeat 50% 50%;
+	mask: url("/modules/mod_jp_yootheme_menu/assets/plus-up.svg") no-repeat 50% 50%;
     mask-size: auto;
   transform: rotate(360deg);
   transition: transform 250ms linear;

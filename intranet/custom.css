@@ -254,7 +254,7 @@ a.uk-accordion-title {
 /* Accordion icons */
 .uk-accordion-title::before {
 	background-color: #000 !important;
-	mask: url("https://intranet.falkenberg.se/images/plus-down.svg") no-repeat 50% 50%;
+	mask: url("/images/plus-down.svg") no-repeat 50% 50%;
 	mask-size: 100% !important;
 	width: 24px;
 	height: 24px;
@@ -266,7 +266,7 @@ a.uk-accordion-title {
 }
 
 .uk-open > .uk-accordion-title::before {
-	mask: url("https://intranet.falkenberg.se/images/plus-up.svg") no-repeat 50% 50%;
+	mask: url("/images/plus-up.svg") no-repeat 50% 50%;
 	mask-size: auto;
 	transform: rotate(360deg);
 	transition: transform 250ms linear;
