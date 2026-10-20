@@ -557,3 +557,37 @@ a.doclink span:last-of-type::before {
         font-size: 18px;
     }
 }
+
+/* === PAUSKNAPP FÖR BAKGRUNDSVIDEO (.fbg-videopaus) === */
+/* Knappen skapas av externwebb/custom.js (laddas som templates/yootheme/js/custom.js) för varje
+   bakgrundsvideo, så att videon går att pausa enligt WCAG 2.2.2. Den ligger i nedre högra hörnet
+   av sektionen, ovanför videon och sektionens innehåll (z-index 2; innehållsbehållaren är
+   position: relative utan z-index). Kontrast: vit ikon på 75 % svart, vit ring vid fokus. */
+.fbg-videopaus {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.75);
+    color: #fff;
+    cursor: pointer;
+}
+.fbg-videopaus svg {
+    fill: currentColor;
+}
+.fbg-videopaus:hover {
+    background: #000;
+}
+.fbg-videopaus:focus-visible {
+    outline: 3px solid #fff;
+    outline-offset: 3px;
+    box-shadow: 0 0 0 6px #1f4e99;
+}

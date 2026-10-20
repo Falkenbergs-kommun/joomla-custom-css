@@ -31,6 +31,16 @@ Changes to CSS files here take effect immediately on the corresponding site — 
 
 Additional site directories may be added following the same pattern: `<site-name>/custom.css`
 
+## JavaScript: `externwebb/custom.js`
+
+YOOtheme also loads `~theme/js/custom.js` automatically (`packages/theme/src/Listener/LoadThemeHead.php`), the same
+way as `custom.css`. On kommun.falkenberg.se `templates/yootheme/js/custom.js` is a symlink to `externwebb/custom.js`.
+Since 2026-10-20 it adds a pause/play button (`.fbg-videopaus`, styled in the "PAUSKNAPP FÖR BAKGRUNDSVIDEO" block of
+`externwebb/custom.css`) to every background video (`<video uk-cover>`, or autoplaying looped muted video without
+controls), for WCAG 2.2.2. With `prefers-reduced-motion` the video starts paused. UIkit restarts `uk-cover` videos on
+scroll/resize, so the script blocks `play()` on a video the visitor has paused until they press play again.
+Keep the file dependency-free (no jQuery/UIkit API) and test in headless Chrome: pause, scroll + resize, still paused.
+
 ## Rule: the intranet and kommun.falkenberg.se move together
 
 Since 2026-10-13 the base typography (20px base, heading scale, lead/meta/large, mobile sizes below
