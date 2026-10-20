@@ -42,6 +42,20 @@ background-color: #000 !important;
   transition: transform 250ms linear;
   background-image: none;
 }
+/* YOOtheme 5: UIkit ritar sin ikon som <span uk-accordion-icon> sist i rubriken (som är flex med gap)
+   och ger inte längre ::before något content. Behåll vår ikon till vänster och dölj UIkits. */
+.uk-accordion-title::before {
+	content: "";
+	display: block;
+	flex: none;
+}
+.uk-accordion-title:has(> [uk-accordion-icon])::before {
+	float: none;
+	margin: 0 0 0 10px;
+}
+.uk-accordion-title > [uk-accordion-icon] {
+	display: none;
+}
 
 .uk-accordion-content {
 	border: 1px solid #d3d8e2 !important;
@@ -590,4 +604,11 @@ a.doclink span:last-of-type::before {
     outline: 3px solid #fff;
     outline-offset: 3px;
     box-shadow: 0 0 0 6px #1f4e99;
+}
+
+/* === TIDSLINJE (Herzog Dupont hd-timeline) === */
+/* YOOtheme 5 lägger uk-margin-top på varje kort i tidslinjen, vilket inte fanns i YOOtheme 4 och
+   ger extra luft mellan stegen. Ta bort den så att avståndet blir som förut. */
+.hd-timeline-item-container > .el-item.uk-margin-top {
+    margin-top: 0 !important;
 }
