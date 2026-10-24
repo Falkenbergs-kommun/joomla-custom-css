@@ -1194,3 +1194,44 @@ a.footermeny:before {
         font-size: 18px;
     }
 }
+
+/* Aktiv sektion i menyraden (desktop). Temat ger aktiv punkt bara #fff mot
+   övrigas rgba(255,255,255,.88), vilket inte syns. Här: ljusare flik med rosa
+   underkant. ::before sticker ut 14px åt sidorna (menyn har padding 0 och 44px
+   mellanrum), så texten flyttar sig inte. Ändras: bara den här regelgruppen. */
+.tm-header .uk-navbar-container .uk-navbar-nav > li > a {
+	position: relative;
+}
+
+.tm-header .uk-navbar-container .uk-navbar-nav > li > a::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: -14px;
+	right: -14px;
+	border-bottom: 4px solid transparent;
+	background: transparent;
+	pointer-events: none;
+	transition: background-color .15s ease, border-color .15s ease;
+}
+
+.tm-header .uk-navbar-container .uk-navbar-nav > li:hover > a::before,
+.tm-header .uk-navbar-container .uk-navbar-nav > li > a[aria-expanded="true"]::before {
+	background: rgba(255, 255, 255, .07);
+}
+
+.tm-header .uk-navbar-container .uk-navbar-nav > li.uk-active > a {
+	color: #fff;
+}
+
+.tm-header .uk-navbar-container .uk-navbar-nav > li.uk-active > a::before {
+	background: rgba(255, 255, 255, .14);
+	border-bottom-color: #edafb8;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.tm-header .uk-navbar-container .uk-navbar-nav > li > a::before {
+		transition: none;
+	}
+}
