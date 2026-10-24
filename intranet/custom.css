@@ -1256,6 +1256,13 @@ a.footermeny:before {
 @media (min-width: 960px) {
 	#jc { padding-left: 40px; padding-right: 40px; }
 }
+/* Sidor med sidopanel lägger hela huvudkolumnen i en uk-container, så #jc
+   ligger redan rätt; nolla paddingen som temat gör för nästlade containrar
+   (.uk-container .uk-container). */
+.uk-container #jc {
+	padding-left: 0;
+	padding-right: 0;
+}
 #jc .jcomment-container-form,
 #jc #comments {
 	max-width: 750px;
