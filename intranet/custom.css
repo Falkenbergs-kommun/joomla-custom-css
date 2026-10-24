@@ -1235,3 +1235,28 @@ a.footermeny:before {
 		transition: none;
 	}
 }
+
+/* ===== Kommentarer (JComments, "Hjälpte den här sidan dig?") =====
+   #jc renderas efter artikeln, utanför byggarens uk-container, och blev
+   därför helsides-brett. Samma bredd och padding som .uk-container i temat
+   så att vänsterkanten linjerar med texten; formulär och lista hålls i
+   läsvänlig bredd inom den. */
+#jc {
+	box-sizing: content-box;
+	max-width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 15px;
+	padding-right: 15px;
+	margin-bottom: 40px;
+}
+@media (min-width: 640px) {
+	#jc { padding-left: 30px; padding-right: 30px; }
+}
+@media (min-width: 960px) {
+	#jc { padding-left: 40px; padding-right: 40px; }
+}
+#jc .jcomment-container-form,
+#jc #comments {
+	max-width: 750px;
+}
