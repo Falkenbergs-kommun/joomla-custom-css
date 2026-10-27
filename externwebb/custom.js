@@ -1,4 +1,4 @@
-/* Paus/spela-knapp för bakgrundsvideor (kommun.falkenberg.se)
+/* Paus/spela-knapp för bakgrundsvideor (kommun.falkenberg.se, falkenbergsgymnasieskola.se)
  *
  * WCAG 2.2.2 (Pausa, stoppa, dölj): rörligt innehåll som startar automatiskt och pågår mer än
  * 5 sekunder ska gå att pausa. Gäller YOOthemes bakgrundsvideor (sektion/kolumn = <video uk-cover>)
@@ -9,8 +9,9 @@
  * - UIkit startar om uk-cover-videor vid scroll/storleksändring. När besökaren har pausat
  *   blockeras därför play() på just den videon tills hen själv trycker på spela igen.
  *
- * Laddas automatiskt av YOOtheme som ~theme/js/custom.js (symlänk till joomla-custom-css/externwebb/).
- * Stilen finns i externwebb/custom.css, blocket "PAUSKNAPP FÖR BAKGRUNDSVIDEO".
+ * Laddas automatiskt av YOOtheme som ~theme/js/custom.js (symlänk till joomla-custom-css/externwebb/;
+ * gymnasieskolan/custom.js är en symlänk hit, så filen är gemensam). Stilen finns i respektive
+ * sajts custom.css, blocket "PAUSKNAPP FÖR BAKGRUNDSVIDEO".
  */
 (function () {
     'use strict';

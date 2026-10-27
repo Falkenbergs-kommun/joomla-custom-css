@@ -34,7 +34,9 @@ Additional site directories may be added following the same pattern: `<site-name
 ## JavaScript: `externwebb/custom.js`
 
 YOOtheme also loads `~theme/js/custom.js` automatically (`packages/theme/src/Listener/LoadThemeHead.php`), the same
-way as `custom.css`. On kommun.falkenberg.se `templates/yootheme/js/custom.js` is a symlink to `externwebb/custom.js`.
+way as `custom.css`. On kommun.falkenberg.se `templates/yootheme/js/custom.js` is a symlink to `externwebb/custom.js`;
+on falkenbergsgymnasieskola.se it points to `gymnasieskolan/custom.js`, which is a relative symlink to
+`externwebb/custom.js` (one shared script, since 2026-10-27 when the start page background became a local MP4).
 Since 2026-10-20 it adds a pause/play button (`.fbg-videopaus`, styled in the "PAUSKNAPP FÖR BAKGRUNDSVIDEO" block of
 `externwebb/custom.css`) to every background video (`<video uk-cover>`, or autoplaying looped muted video without
 controls), for WCAG 2.2.2. With `prefers-reduced-motion` the video starts paused. UIkit restarts `uk-cover` videos on
