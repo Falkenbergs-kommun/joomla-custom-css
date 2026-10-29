@@ -520,6 +520,14 @@ h1.wave::before {
 	overflow-wrap: break-word;
 }
 
+/* E-postadresser saknar brytpunkter och rinner annars ut i boxens padding
+   (t.ex. mirjam.vonrenteln@falkenberg.se i en uk-tile med uk-padding).
+   anywhere i stället för break-word: räknas in i min-content, så det
+   fungerar även i tabellceller och flex-/gridbarn. Bryter bara vid överflöd. */
+a[href^="mailto:"] {
+	overflow-wrap: anywhere;
+}
+
 /* Prevent grid children from overflowing their column */
 .uk-grid > * {
 	min-width: 0;
