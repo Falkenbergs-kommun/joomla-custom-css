@@ -42,6 +42,10 @@ Since 2026-10-20 it adds a pause/play button (`.fbg-videopaus`, styled in the "P
 controls), for WCAG 2.2.2. With `prefers-reduced-motion` the video starts paused. UIkit restarts `uk-cover` videos on
 scroll/resize, so the script blocks `play()` on a video the visitor has paused until they press play again.
 Keep the file dependency-free (no jQuery/UIkit API) and test in headless Chrome: pause, scroll + resize, still paused.
+Since 2026-10-29 a second block inserts `<wbr>` before `@` in every `mailto:` link (MutationObserver, because
+Joomla's `<joomla-hidden-mail>` builds the link after page load), so long addresses wrap as `name` / `@falkenberg.se`;
+`a[href^="mailto:"] { overflow-wrap: anywhere }` in custom.css is the fallback. A syntax error in this file silently
+kills both features, so check for `pageerror` in headless Chrome after every edit.
 
 ## Rule: the intranet and kommun.falkenberg.se move together
 

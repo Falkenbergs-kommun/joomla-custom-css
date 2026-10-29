@@ -81,3 +81,50 @@
         start();
     }
 })();
+
+/* Radbrytning i e-postadresser: lägger en <wbr> före @, så att en lång adress i första hand bryts
+ * som "fornamn.efternamn" / "@falkenberg.se" i stället för mitt i domänen. <wbr> är inget tecken,
+ * så adressen blir oförändrad vid kopiering. Räcker inte det bryter CSS-regeln
+ * a[href^="mailto:"] { overflow-wrap: anywhere } i custom.css var som helst.
+ *
+ * Joomlas e-postmaskering (<joomla-hidden-mail>) skapar länken först när dess script har körts,
+ * och på nytt om elementet flyttas, därför en MutationObserver i stället för en engångskörning.
+ */
+(function () {
+    'use strict';
+
+    function brytForeSnabela(lank) {
+        if (lank.querySelector('wbr')) { return; }
+        var walker = document.createTreeWalker(lank, NodeFilter.SHOW_TEXT, null);
+        var nod;
+        while ((nod = walker.nextNode())) {
+            var i = nod.nodeValue.indexOf('@');
+            if (i > 0) {
+                var resten = nod.splitText(i);
+                nod.parentNode.insertBefore(document.createElement('wbr'), resten);
+                return;
+            }
+        }
+    }
+
+    function behandla(rot) {
+        if (rot.nodeType !== 1) { return; }
+        if (rot.matches('a[href^="mailto:"]')) { brytForeSnabela(rot); }
+        Array.prototype.forEach.call(rot.querySelectorAll('a[href^="mailto:"]'), brytForeSnabela);
+    }
+
+    function start() {
+        behandla(document.body);
+        new MutationObserver(function (andringar) {
+            andringar.forEach(function (andring) {
+                Array.prototype.forEach.call(andring.addedNodes, behandla);
+            });
+        }).observe(document.body, { childList: true, subtree: true });
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', start);
+    } else {
+        start();
+    }
+})();

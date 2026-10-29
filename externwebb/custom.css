@@ -504,6 +504,7 @@ a.doclink span:last-of-type::before {
 
 /* E-postadresser saknar brytpunkter och rinner annars ut i boxens padding
    (t.ex. mirjam.vonrenteln@falkenberg.se i en uk-tile med uk-padding).
+   På kommunwebben lägger custom.js en <wbr> före @, så detta är reserven.
    anywhere i stället för break-word: räknas in i min-content, så det
    fungerar även i tabellceller och flex-/gridbarn. Bryter bara vid överflöd. */
 a[href^="mailto:"] {
