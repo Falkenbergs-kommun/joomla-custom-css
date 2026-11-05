@@ -14,6 +14,7 @@ custom-styles-yootheme/
 ├── campusfalkenberg/     # Campus Falkenberg (campusfalkenberg.se)
 ├── elev/                 # Elevportalen (elev.falkenberg.se)
 ├── externwebb/           # Externwebben (kommun.falkenberg.se)
+├── falkenbergsnaringsliv/ # Falkenbergs näringsliv (falkenbergsnaringsliv.se)
 ├── gymnasiehalland/      # Gymnasie Halland (gymnasiehalland.se)
 ├── gymnasieskolan/       # Falkenbergs gymnasieskola (falkenbergsgymnasieskola.se)
 ├── intranet/             # Intranätet (utvecklingsmiljön)
@@ -40,6 +41,10 @@ Detta gör att alla CSS-anpassningar versionshanteras på ett ställe, medan Joo
    ln -s /home/httpd/fbg-intranet/joomlaextensions/custom-styles-yootheme/<katalog>/custom.css \
          <sajt-template-sökväg>/css/custom.css
    ```
+
+På app02 har varje sajt en egen användare, så symlänken skapas som den användaren (`ssh -l <användare> app02`). Målet ligger
+kvar under `fbg-intranet` och måste vara världsläsbart. Driftsätt med `git pull --ff-only` i
+`/home/httpd/fbg-intranet/joomlaextensions/custom-styles-yootheme` på den server där sajten körs.
 
 ## Regel: intranätet och kommunwebben följs åt
 

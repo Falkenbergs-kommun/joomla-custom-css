@@ -1,0 +1,85 @@
+/* Falkenbergs näringsliv (falkenbergsnaringsliv.se)
+   Symlänkad från templates/yootheme/css/custom.css på app02. */
+
+/* === TIDSLINJE (Herzog Dupont hd-timeline) === */
+/* Grundreglerna för elementet hd-timeline, kopierade ur kompilerad CSS på kommun.falkenberg.se (plugin 1.9.3,
+   assets/less/hd-timeline.less). De ligger här eftersom YOOtheme bara lägger in pluginets LESS i theme.12.css när
+   temat kompileras i anpassaren, och utan dem tappar tidslinjen hela sin layout. Efter en kompilering finns reglerna
+   även i temat, vilket inte gör något. Färger per steg sätts i elementets eget CSS-fält i byggaren, inte här. */
+.hd-timeline-container{position:relative}
+.hd-timeline-container>.hd-timeline-line{position:absolute;height:100%;width:4px;background-color:rgba(0,0,0,.1);border-color:rgba(0,0,0,.1);border-style:none}
+.hd-timeline-container>.hd-timeline-line::after{content:'';height:calc(4px * 4);width:calc(4px * 4);position:absolute;bottom:0;left:50%;transform:translate(-50%,100%);background-color:inherit;border-radius:50%}
+.hd-timeline-align-right>.hd-timeline-line{left:calc(20px + calc(.3 * 20px) + 4px / 2);transform:none}
+.hd-timeline-align-left>.hd-timeline-line{left:calc(100% - 20px - calc(.3 * 20px) - 4px);transform:translateX(-50%)}
+.hd-timeline-align-left-alternate>.hd-timeline-line,.hd-timeline-align-right-alternate>.hd-timeline-line{left:50%;transform:translateX(-50%)}
+.hd-timeline-align-right>div:nth-child(n)>.hd-timeline-item-container{position:relative;width:auto;left:0;margin-left:calc((20px + calc(.3 * 20px) + 4px) * 2 + 40px);margin-right:0}
+.hd-timeline-align-left>div:nth-child(n)>.hd-timeline-item-container{position:relative;width:auto;left:0;margin-right:calc((20px + calc(.3 * 20px) + 4px) * 2 + 40px);margin-left:0}
+.hd-timeline-align-right-alternate>div:nth-child(2n)>.hd-timeline-item-container{position:relative;width:calc(50% - 20px - calc(.3 * 20px) - 4px - 40px);left:50%;margin-left:calc((20px + calc(.3 * 20px) + 4px) + 40px);margin-right:0}
+.hd-timeline-align-right-alternate>div:nth-child(odd)>.hd-timeline-item-container{position:relative;width:calc(50% - 20px - calc(.3 * 20px) - 4px - 40px);left:0;margin-left:0}
+.hd-timeline-align-left-alternate>div:nth-child(2n)>.hd-timeline-item-container{position:relative;width:calc(50% - 20px - calc(.3 * 20px) - 4px - 40px);left:0;margin-left:0}
+.hd-timeline-align-left-alternate>div:nth-child(odd)>.hd-timeline-item-container{position:relative;width:calc(50% - 20px - calc(.3 * 20px) - 4px - 40px);left:50%;margin-left:calc((20px + calc(.3 * 20px) + 4px) + 40px);margin-right:0}
+.hd-timeline-container>div>.el-timeline-icon{position:absolute;background-color:#fff;border-radius:50%;border-width:4px;padding:calc(.3 * 20px);border-style:solid}
+.hd-timeline-align-right>div>.el-timeline-icon{left:0}
+.hd-timeline-align-left>div>.el-timeline-icon{left:calc(100% - (20px + calc(.3 * 20px) + 4px) * 2)}
+.hd-timeline-align-left-alternate>div>.el-timeline-icon,.hd-timeline-align-right-alternate>div>.el-timeline-icon{left:calc(50% - 20px - 4px - calc(.3 * 20px))}
+.hd-timeline-align-left-alternate>div>.hd-timeline-icon-default,.hd-timeline-align-left>div>.hd-timeline-icon-default,.hd-timeline-align-right-alternate>div>.hd-timeline-icon-default,.hd-timeline-align-right>div>.hd-timeline-icon-default{margin-left:20px}
+@media (min-width:640px){
+.hd-timeline-align-right\@s>.hd-timeline-line{left:calc(20px + calc(.3 * 20px) + 4px / 2);transform:none}
+.hd-timeline-align-left\@s>.hd-timeline-line{left:calc(100% - 20px - calc(.3 * 20px) - 4px);transform:translateX(-50%)}
+.hd-timeline-align-right-alternate\@s>.hd-timeline-line{left:50%;transform:translateX(-50%)}
+.hd-timeline-align-left-alternate\@s>.hd-timeline-line{left:50%;transform:translateX(-50%)}
+.hd-timeline-align-right\@s>div:nth-child(n)>.hd-timeline-item-container{width:auto;left:0;margin-left:calc((20px + calc(.3 * 20px) + 4px) * 2 + 40px);margin-right:0}
+.hd-timeline-align-left\@s>div:nth-child(n)>.hd-timeline-item-container{width:auto;left:0;margin-right:calc((20px + calc(.3 * 20px) + 4px) * 2 + 40px);margin-left:0}
+.hd-timeline-align-right-alternate\@s>div:nth-child(2n)>.hd-timeline-item-container{width:calc(50% - 20px - calc(.3 * 20px) - 4px - 40px);left:50%;margin-left:calc((20px + calc(.3 * 20px) + 4px) + 40px);margin-right:0}
+.hd-timeline-align-right-alternate\@s>div:nth-child(odd)>.hd-timeline-item-container{width:calc(50% - 20px - calc(.3 * 20px) - 4px - 40px);left:0;margin-left:0}
+.hd-timeline-align-left-alternate\@s>div:nth-child(2n)>.hd-timeline-item-container{width:calc(50% - 20px - calc(.3 * 20px) - 4px - 40px);left:0;margin-left:0}
+.hd-timeline-align-left-alternate\@s>div:nth-child(odd)>.hd-timeline-item-container{width:calc(50% - 20px - calc(.3 * 20px) - 4px - 40px);left:50%;margin-left:calc((20px + calc(.3 * 20px) + 4px) + 40px);margin-right:0}
+.hd-timeline-align-right\@s>div>.el-timeline-icon{left:0}
+.hd-timeline-align-left\@s>div>.el-timeline-icon{left:calc(100% - (20px + calc(.3 * 20px) + 4px) * 2)}
+.hd-timeline-align-left-alternate\@s>div>.el-timeline-icon,.hd-timeline-align-right-alternate\@s>div>.el-timeline-icon{left:calc(50% - 20px - 4px - calc(.3 * 20px))}
+}
+@media (min-width:960px){
+.hd-timeline-align-right\@m>.hd-timeline-line{left:calc(20px + calc(.3 * 20px) + 4px / 2);transform:none}
+.hd-timeline-align-left\@m>.hd-timeline-line{left:calc(100% - 20px - calc(.3 * 20px) - 4px);transform:translateX(-50%)}
+.hd-timeline-align-right-alternate\@m>.hd-timeline-line{left:50%;transform:translateX(-50%)}
+.hd-timeline-align-left-alternate\@m>.hd-timeline-line{left:50%;transform:translateX(-50%)}
+.hd-timeline-align-right\@m>div:nth-child(n)>.hd-timeline-item-container{width:auto;left:0;margin-left:calc((20px + calc(.3 * 20px) + 4px) * 2 + 40px);margin-right:0}
+.hd-timeline-align-left\@m>div:nth-child(n)>.hd-timeline-item-container{width:auto;left:0;margin-right:calc((20px + calc(.3 * 20px) + 4px) * 2 + 40px);margin-left:0}
+.hd-timeline-align-right-alternate\@m>div:nth-child(2n)>.hd-timeline-item-container{width:calc(50% - 20px - calc(.3 * 20px) - 4px - 40px);left:50%;margin-left:calc((20px + calc(.3 * 20px) + 4px) + 40px);margin-right:0}
+.hd-timeline-align-right-alternate\@m>div:nth-child(odd)>.hd-timeline-item-container{width:calc(50% - 20px - calc(.3 * 20px) - 4px - 40px);left:0;margin-left:0}
+.hd-timeline-align-left-alternate\@m>div:nth-child(2n)>.hd-timeline-item-container{width:calc(50% - 20px - calc(.3 * 20px) - 4px - 40px);left:0;margin-left:0}
+.hd-timeline-align-left-alternate\@m>div:nth-child(odd)>.hd-timeline-item-container{width:calc(50% - 20px - calc(.3 * 20px) - 4px - 40px);left:50%;margin-left:calc((20px + calc(.3 * 20px) + 4px) + 40px);margin-right:0}
+.hd-timeline-align-right\@m>div>.el-timeline-icon{left:0}
+.hd-timeline-align-left\@m>div>.el-timeline-icon{left:calc(100% - (20px + calc(.3 * 20px) + 4px) * 2)}
+.hd-timeline-align-left-alternate\@m>div>.el-timeline-icon,.hd-timeline-align-right-alternate\@m>div>.el-timeline-icon{left:calc(50% - 20px - 4px - calc(.3 * 20px))}
+}
+@media (min-width:1200px){
+.hd-timeline-align-right\@l>.hd-timeline-line{left:calc(20px + calc(.3 * 20px) + 4px / 2);transform:none}
+.hd-timeline-align-left\@l>.hd-timeline-line{left:calc(100% - 20px - calc(.3 * 20px) - 4px);transform:translateX(-50%)}
+.hd-timeline-align-right-alternate\@l>.hd-timeline-line{left:50%;transform:translateX(-50%)}
+.hd-timeline-align-left-alternate\@l>.hd-timeline-line{left:50%;transform:translateX(-50%)}
+.hd-timeline-align-right\@l>div:nth-child(n)>.hd-timeline-item-container{width:auto;left:0;margin-left:calc((20px + calc(.3 * 20px) + 4px) * 2 + 40px);margin-right:0}
+.hd-timeline-align-left\@l>div:nth-child(n)>.hd-timeline-item-container{width:auto;left:0;margin-right:calc((20px + calc(.3 * 20px) + 4px) * 2 + 40px);margin-left:0}
+.hd-timeline-align-right-alternate\@l>div:nth-child(2n)>.hd-timeline-item-container{width:calc(50% - 20px - calc(.3 * 20px) - 4px - 40px);left:50%;margin-left:calc((20px + calc(.3 * 20px) + 4px) + 40px);margin-right:0}
+.hd-timeline-align-right-alternate\@l>div:nth-child(odd)>.hd-timeline-item-container{width:calc(50% - 20px - calc(.3 * 20px) - 4px - 40px);left:0;margin-left:0}
+.hd-timeline-align-left-alternate\@l>div:nth-child(2n)>.hd-timeline-item-container{width:calc(50% - 20px - calc(.3 * 20px) - 4px - 40px);left:0;margin-left:0}
+.hd-timeline-align-left-alternate\@l>div:nth-child(odd)>.hd-timeline-item-container{width:calc(50% - 20px - calc(.3 * 20px) - 4px - 40px);left:50%;margin-left:calc((20px + calc(.3 * 20px) + 4px) + 40px);margin-right:0}
+.hd-timeline-align-right\@l>div>.el-timeline-icon{left:0}
+.hd-timeline-align-left\@l>div>.el-timeline-icon{left:calc(100% - (20px + calc(.3 * 20px) + 4px) * 2)}
+.hd-timeline-align-left-alternate\@l>div>.el-timeline-icon,.hd-timeline-align-right-alternate\@l>div>.el-timeline-icon{left:calc(50% - 20px - 4px - calc(.3 * 20px))}
+}
+@media (min-width:1600px){
+.hd-timeline-align-right\@xl>.hd-timeline-line{left:calc(20px + calc(.3 * 20px) + 4px / 2);transform:none}
+.hd-timeline-align-left\@xl>.hd-timeline-line{left:calc(100% - 20px - calc(.3 * 20px) - 4px);transform:translateX(-50%)}
+.hd-timeline-align-right-alternate\@xl>.hd-timeline-line{left:50%;transform:translateX(-50%)}
+.hd-timeline-align-left-alternate\@xl>.hd-timeline-line{left:50%;transform:translateX(-50%)}
+.hd-timeline-align-right\@xl>div:nth-child(n)>.hd-timeline-item-container{width:auto;left:0;margin-left:calc((20px + calc(.3 * 20px) + 4px) * 2 + 40px);margin-right:0}
+.hd-timeline-align-left\@xl>div:nth-child(n)>.hd-timeline-item-container{width:auto;left:0;margin-right:calc((20px + calc(.3 * 20px) + 4px) * 2 + 40px);margin-left:0}
+.hd-timeline-align-right-alternate\@xl>div:nth-child(2n)>.hd-timeline-item-container{width:calc(50% - 20px - calc(.3 * 20px) - 4px - 40px);left:50%;margin-left:calc((20px + calc(.3 * 20px) + 4px) + 40px);margin-right:0}
+.hd-timeline-align-right-alternate\@xl>div:nth-child(odd)>.hd-timeline-item-container{width:calc(50% - 20px - calc(.3 * 20px) - 4px - 40px);left:0;margin-left:0}
+.hd-timeline-align-left-alternate\@xl>div:nth-child(2n)>.hd-timeline-item-container{width:calc(50% - 20px - calc(.3 * 20px) - 4px - 40px);left:0;margin-left:0}
+.hd-timeline-align-left-alternate\@xl>div:nth-child(odd)>.hd-timeline-item-container{width:calc(50% - 20px - calc(.3 * 20px) - 4px - 40px);left:50%;margin-left:calc((20px + calc(.3 * 20px) + 4px) + 40px);margin-right:0}
+.hd-timeline-align-right\@xl>div>.el-timeline-icon{left:0}
+.hd-timeline-align-left\@xl>div>.el-timeline-icon{left:calc(100% - (20px + calc(.3 * 20px) + 4px) * 2)}
+.hd-timeline-align-left-alternate\@xl>div>.el-timeline-icon,.hd-timeline-align-right-alternate\@xl>div>.el-timeline-icon{left:calc(50% - 20px - 4px - calc(.3 * 20px))}
+}

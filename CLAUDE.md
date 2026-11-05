@@ -23,6 +23,7 @@ Changes to CSS files here take effect immediately on the corresponding site — 
 - `campusfalkenberg/` — Campus Falkenberg (campusfalkenberg.se)
 - `elev/` — Student portal (elev.falkenberg.se)
 - `externwebb/` — External website (kommun.falkenberg.se)
+- `falkenbergsnaringsliv/` — Falkenbergs näringsliv (falkenbergsnaringsliv.se); holds only the base rules for the `hd-timeline` element so far
 - `gymnasiehalland/` — Gymnasie Halland (gymnasiehalland.se)
 - `gymnasieskolan/` — Falkenbergs gymnasieskola (falkenbergsgymnasieskola.se)
 - `intranet/` — Intranet (intranet.example.com)
