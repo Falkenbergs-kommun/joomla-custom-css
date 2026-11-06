@@ -161,3 +161,12 @@ Moduler som laddar den: `mod_fbg_apicostdashboard`, `mod_fbg_facklig`, `mod_fbg_
 - **Tema-CSS:** `/home/httpd/fbg-intranet/intranet.example.com/templates/yootheme_child/css/theme.9.css` (minifierad)
 - **datatables.css:** `/home/httpd/fbg-intranet/joomlaextensions/custom-styles-yootheme/intranet/datatables.css`
 - **Symlänk:** `/home/httpd/fbg-intranet/intranet.example.com/fbg_apps/js/framework/datatables/fbg-dt-uikit.css` → ovanstående
+
+## Innehållsförteckning i artikel (`fbg-toc`)
+
+Elementet JP CE Automatic TOC som statisk ruta, med klassen `fbg-toc` under Advanced i byggaren.
+
+- Navstil **Default**, inte Custom: Custom ger `uk-nav-custom` på listan, och den klassen har plusikonen från menyreglerna.
+- Sticky av. Målet är Custom Class med selektorn `h2:not(.uk-alert h2)`, så att rubriken i en ruta precis under förteckningen inte blir en egen länk. Selektorn körs inom `#tm-main`.
+- Pluginets scrollspy sätter `uk-active` på en länk i taget, och sidans inlinestil gör den texten vit (`color: white !important`). Blocket i `custom.css` stänger av markeringen.
+- Första användning: artikel 76, Representation och gåvor (2026-11-06).
