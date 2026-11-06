@@ -1283,8 +1283,9 @@ a.footermeny:before {
    här filen. Pluginets scrollspy sätter uk-active på en länk i taget. Sidans
    inlinestil (color: white !important, avsedd för sidomenyn) gör den texten
    vit, därav !important här. I en statisk ruta säger markeringen ändå
-   ingenting, så den och ikonen stängs av. Kolumnantalet styrs av rutans bredd. */
-.fbg-toc #jp_automatic_toc ul {
+   ingenting, så den och ikonen stängs av. Andra kolumnen kräver minst 11 länkar
+   och att rutan är bred nog för två kolumner om minst 320 px. */
+.fbg-toc #jp_automatic_toc ul:has(> li:nth-child(11)) {
 	columns: 320px 2;
 	column-gap: 32px;
 }
