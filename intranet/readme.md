@@ -169,4 +169,5 @@ Elementet JP CE Automatic TOC som statisk ruta, med klassen `fbg-toc` under Adva
 - Navstil **Default**, inte Custom: Custom ger `uk-nav-custom` på listan, och den klassen har plusikonen från menyreglerna.
 - Sticky av. Målet är Custom Class med selektorn `h2:not(.uk-alert h2)`, så att rubriken i en ruta precis under förteckningen inte blir en egen länk. Selektorn körs inom `#tm-main`.
 - Pluginets scrollspy sätter `uk-active` på en länk i taget, och sidans inlinestil gör den texten vit (`color: white !important`). Blocket i `custom.css` stänger av markeringen.
+- Två kolumner kräver minst 11 länkar (`ul:has(> li:nth-child(11))`) och att rutan rymmer två kolumner om minst 320 px. Det är länkar som räknas, inte radbrytningar.
 - Första användning: artikel 76, Representation och gåvor (2026-11-06).
