@@ -171,3 +171,21 @@ Elementet JP CE Automatic TOC som statisk ruta, med klassen `fbg-toc` under Adva
 - Pluginets scrollspy sätter `uk-active` på en länk i taget, och sidans inlinestil gör den texten vit (`color: white !important`). Blocket i `custom.css` stänger av markeringen.
 - Två kolumner kräver minst 11 länkar (`ul:has(> li:nth-child(11))`) och att rutan rymmer två kolumner om minst 320 px. Det är länkar som räknas, inte radbrytningar.
 - Första användning: artikel 76, Representation och gåvor (2026-11-06).
+
+## Fokusmarkering (avsnittet ACCESSIBILITY)
+
+Reglerna `a:focus-visible, button:focus-visible`, `.sidebarmenu … a:focus-visible` och
+`.ui-accordion-header-active:focus-visible` ger en prickad markering vid tangentbordsnavigering.
+
+- **`:focus-visible`, inte `:focus`** (ändrat 2026-11-09). Med `:focus` blev linjen kvar efter musklick på allt som inte
+  byter sida. Det syntes på toppradens knappar Program, Grupper och Favoriter: de öppnar en modal, och UIkit lämnar
+  tillbaka fokus till knappen när modalen stängs. Det beteendet är rätt och ska inte stängas av.
+- **Utseendet är temats eget.** Anpassaren har inställningen under Base → Focus (`@base-focus-outline-width`, `-style`,
+  `-offset` och `@base-focus-outline`). Stil 9 har inte rört dem, så temat ger `:focus-visible { outline: 2px dotted #000 }`.
+  Ska markeringen se annorlunda ut ändras den både där och här.
+- **Reglerna behövs ändå, för `!important`.** Temats kompilerade CSS har `outline: 0` på bland annat `.page-link:focus`,
+  `.btn-close:focus`, `.accordion-button:focus` och `.navbar-toggler:focus`, och tillägg gör likadant
+  (`mod_fbg_toppmeny` har `outline: none` på sina knappar). Utan `!important` här försvinner markeringen på de ställena.
+- **Test:** headless Chromium med `theme.9.css`, `custom.css` och temats `uikit.min.js` (statiska filer, nås utan
+  inloggning) och en knapp med `uk-toggle` mot en modal. Klicka, stäng med krysset: knappen har fokus men
+  `outline-style: none`. Tabba till knappen: `dotted`.
