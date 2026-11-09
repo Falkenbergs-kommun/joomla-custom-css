@@ -26,16 +26,20 @@
    ACCESSIBILITY
    ========================================================================== */
 
-a:focus, button:focus {
+/* :focus-visible, inte :focus: markeringen ska synas vid tangentbordsnavigering men inte bli kvar
+   efter ett musklick (knappar som öppnar en modal får tillbaka fokus när den stängs).
+   Temat har redan :focus-visible { outline: 2px dotted } (anpassaren, Base > Focus). Reglerna här
+   finns för !important: de tvingar fram markeringen där temat eller ett tillägg har outline: 0. */
+a:focus-visible, button:focus-visible {
 	outline: 2px dotted #333 !important;
 }
 
-.sidebarmenu .uk-nav-default>li>a:focus,
-.sidebarmenu a:focus {
+.sidebarmenu .uk-nav-default>li>a:focus-visible,
+.sidebarmenu a:focus-visible {
 	outline: 2px dotted #333 !important;
 }
 
-.ui-accordion-header-active:focus {
+.ui-accordion-header-active:focus-visible {
 	border-bottom: 2px dotted #333 !important;
 }
 
