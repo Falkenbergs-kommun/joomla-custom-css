@@ -621,3 +621,19 @@ a[href^="mailto:"] {
 .hd-timeline-item-container > .el-item.uk-margin-top {
     margin-top: 0 !important;
 }
+
+/* ===== JP MESSAGES (DRIFTMEDDELANDEBANNER) =====
+   mod_jp_messages i positionen header_special (barntemat yootheme_child, 2026-11-13).
+   Samma block finns i gymnasieskolan/, vuxenutbildningen/ och campusfalkenberg/.
+   Stängknappen följer meddelandets textfärg, så den syns mot både ljus och mörk
+   bakgrund (WCAG 1.4.11). Temats egen uk-icon-button-färg kan annars nästan
+   försvinna, t.ex. ljusgrönt mot gult eller blått mot rött. */
+[class*="jp_msg_"] .uk-icon-button {
+    color: inherit;
+    border-color: currentColor;
+}
+[class*="jp_msg_"] .uk-icon-button:hover,
+[class*="jp_msg_"] .uk-icon-button:focus-visible {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: inherit;
+}
