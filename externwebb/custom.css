@@ -637,3 +637,168 @@ a[href^="mailto:"] {
     background-color: rgba(0, 0, 0, 0.1);
     color: inherit;
 }
+
+/* === TEMASIDA (.tema-sida, .tema-box) ===
+   Byggstenar för temasidor (navigationssidor), först Familjeguiden (2026-11-23, kravspec 20261016).
+   - .tema-sida  sätts på varje builder-sektion på sidan (Sektion > Avancerat > Klass) och avgränsar
+                 fokusmarkering, extern-ikon och länklistor till sidan.
+   - .tema-box   sätts på ett Sublayout-element (fragment): vit ruta med 8 px rundning och 2 px kantlinje i
+                 --tema-farg. Ikoner i rutan får samma färg (kravspec 24). Färgvarianter ur grafiska profilen,
+                 alla minst 3:1 mot vitt (WCAG 1.4.11): .tema-bla Kommunblå, .tema-rod Vinbär,
+                 .tema-havsvik Havsvik, .tema-gron Buteljgrön, .tema-stal Stål. .tema-fylld ger ljus bakgrund.
+   - .tema-lika      på en rad (Rad > Avancerat > Klass): sista rutan i varje kolumn sträcks så att rutorna blir lika höga.
+   - .tema-hopp      knappraden "Vad vill du hitta på sidan?" (ankarlänkar, färg per mål i ordning).
+   - .tema-knappar   knappar i en ruta: hela bredden på mobil, lika breda på rad från 960 px (-3 = tre per rad).
+   - .tema-lanklista länklista med pil före länken; externa länkar får ikon efter (kravspec 22).
+   Plusboxen är det vanliga JP-elementet "050 Plusbox" med stilen UIkit; här får den bara rundning och fokus. */
+.tema-box {
+    --tema-farg: #1F4E99;
+    --tema-ljus: #EAF0FB;
+    background: #fff;
+    border: 2px solid var(--tema-farg);
+    border-radius: 8px;
+    padding: 24px;
+    box-sizing: border-box;
+    scroll-margin-top: 24px;
+}
+@media (min-width: 960px) {
+    .tema-box { padding: 32px; }
+}
+.tema-box.tema-bla     { --tema-farg: #1F4E99; --tema-ljus: #EAF0FB; }
+.tema-box.tema-rod     { --tema-farg: #AB0D1F; --tema-ljus: #FBEDEE; }
+.tema-box.tema-havsvik { --tema-farg: #0F8C9D; --tema-ljus: #E7F4F5; }
+.tema-box.tema-gron    { --tema-farg: #146647; --tema-ljus: #E8F2EE; }
+.tema-box.tema-stal    { --tema-farg: #3D405B; --tema-ljus: #EFEFF3; }
+.tema-box.tema-fylld   { background: var(--tema-ljus); }
+/* Rutor i samma rad blir lika höga (radklassen tema-lika). */
+.tema-lika > * { display: flex; flex-direction: column; }
+.tema-lika > * > .tema-box:last-child { flex: 1 1 auto; }
+/* Ruta i ruta (t.ex. Skolans digitala system i Populära sidor): tunnare kant så att nivåerna syns. */
+.tema-box .tema-box { border-width: 1px; }
+
+/* Ikoner i rutan i rutans färg. YOOessentials-ikonerna (heroicons) har hårdkodad stroke="#4A5568";
+   currentColor gör att de följer color. */
+.tema-box .el-image[uk-icon],
+.tema-box .uk-icon.el-image { color: var(--tema-farg) !important; } /* !important: panelens uk-text-emphasis sätter färgen */
+.tema-sida [uk-icon] svg [stroke]:not([stroke="none"]) { stroke: currentColor; }
+.tema-sida [uk-icon] svg [fill]:not([fill="none"]) { fill: currentColor; }
+.tema-box .el-title { text-wrap: balance; }
+
+/* Fokus och hover (kravspec 25): profilens fokusring, 3 px Kommunblå med luft, i stället för temats prickade 2 px. */
+.tema-sida :focus-visible {
+    outline: 3px solid #1F4E99 !important; /* !important: theme.12.css och knapparnas egna outline */
+    outline-offset: 2px;
+}
+
+/* --- Knappar (hopprad och knappar i rutor) --- */
+.tema-sida :is(.tema-hopp, .tema-knappar) .uk-button,
+.tema-box .el-link.uk-button {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    width: 100%;
+    min-height: 48px;
+    padding: 8px 16px;
+    box-sizing: border-box;
+    background: #fff;
+    color: #1F1F1F;
+    border: 2px solid var(--tema-farg, #1F4E99);
+    border-radius: 8px;
+    font-family: 'Lato', Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.3;
+    text-align: left;
+    text-transform: none;
+    white-space: normal;
+}
+.tema-sida :is(.tema-hopp, .tema-knappar) .uk-button:hover,
+.tema-box .el-link.uk-button:hover {
+    background: var(--tema-ljus, #EAF0FB);
+    color: #1F1F1F;
+    text-decoration: underline;
+}
+.tema-sida :is(.tema-hopp, .tema-knappar) .uk-button [uk-icon] { color: var(--tema-farg, #1F4E99); flex: none; margin: 0 !important; } /* !important: YOOthemes uk-margin-small-right, gap ger avståndet */
+/* Ensam knapp (panelens knapp, knapp i plusbox): bara så bred som texten. */
+.tema-box .el-link.uk-button,
+.tema-sida p.tema-knappar .uk-button { display: inline-flex; width: auto; }
+/* YOOthemes knappgrid: en knapp per rad på mobil (kravspec 28), lika breda på rad från 960 px. */
+.tema-sida :is(.tema-hopp, .tema-knappar) .uk-grid > * { width: 100%; }
+@media (min-width: 640px) {
+    .tema-sida :is(.tema-hopp, .tema-knappar) .uk-grid > * { width: 50%; }
+}
+@media (min-width: 960px) {
+    .tema-sida :is(.tema-hopp, .tema-knappar) .uk-grid > * { width: auto; flex: 1 1 0; min-width: 0; }
+    .tema-sida .tema-knappar-3 .uk-grid > * { flex: 0 0 33.333%; }
+}
+/* Hoppraden: varje knapp i samma färg som rutan den leder till. */
+.tema-hopp .uk-grid > :nth-child(1) { --tema-farg: #1F4E99; --tema-ljus: #EAF0FB; }
+.tema-hopp .uk-grid > :nth-child(2) { --tema-farg: #AB0D1F; --tema-ljus: #FBEDEE; }
+.tema-hopp .uk-grid > :nth-child(3) { --tema-farg: #0F8C9D; --tema-ljus: #E7F4F5; }
+.tema-hopp .uk-grid > :nth-child(4) { --tema-farg: #3D405B; --tema-ljus: #EFEFF3; }
+
+/* --- Länklistor (kravspec 21, 22, 26): pilen är en del av länken, minst 24 px hög klickyta, luft mellan länkarna. --- */
+.tema-lanklista ul {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+.tema-lanklista ul > li + li { margin-top: 0.6em !important; } /* !important: body-textlistornas li + li-regel ovan */
+.tema-lanklista ul > li > a {
+    position: relative;
+    display: inline-block;
+    padding-left: 26px;
+    min-height: 24px;
+    color: #1F4E99;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+.tema-lanklista ul > li > a:hover { text-decoration-thickness: 2px; }
+.tema-lanklista ul > li > a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.3em;
+    width: 18px;
+    height: 18px;
+    background-color: currentColor;
+    -webkit-mask: url("/media/yooessentials/icons/heroicons/outline/arrow-narrow-right.svg") no-repeat 50% 50% / 100%;
+    mask: url("/media/yooessentials/icons/heroicons/outline/arrow-narrow-right.svg") no-repeat 50% 50% / 100%;
+}
+
+/* --- Externa länkar (kravspec 22): liten ikon efter länktexten, med text för skärmläsare.
+       Evenemangskorten undantas (alla går till källsajterna och har egen layout). --- */
+.tema-sida a[href^="http"]:not([href*="//kommun.falkenberg.se"]):not([aria-hidden]):not(.mod-fbg-evenemang a)::after {
+    content: "";
+    content: "" / "(extern webbplats)";
+    display: inline-block;
+    flex: none;
+    width: 0.85em;
+    height: 0.85em;
+    margin-left: 0.3em;
+    vertical-align: -0.05em;
+    background-color: currentColor;
+    -webkit-mask: url("/media/yooessentials/icons/heroicons/outline/external-link.svg") no-repeat 50% 50% / 100%;
+    mask: url("/media/yooessentials/icons/heroicons/outline/external-link.svg") no-repeat 50% 50% / 100%;
+}
+.tema-sida .uk-button[href^="http"]:not([href*="//kommun.falkenberg.se"])::after { margin-left: auto; }
+
+/* --- Plusbox i rutan (kravspec 6, 7): rundade hörn och fokusring; rutan växer på höjden när den öppnas. --- */
+.tema-box .uk-accordion > * + * { margin-top: 10px; }
+.tema-box .uk-accordion-title {
+    border-radius: 8px;
+    background-color: #fff;
+    font-family: 'Lato', Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: normal;
+}
+.tema-box .uk-accordion-title :is(h2, h3, h4) { font-family: inherit; font-weight: inherit; font-size: inherit; letter-spacing: inherit; line-height: 1.35; padding-left: 0 !important; } /* !important: theme.12.css .uk-accordion-title h3 */
+.tema-box .uk-open > .uk-accordion-title { border-radius: 8px 8px 0 0; background-color: var(--tema-ljus); }
+.tema-box .uk-accordion-content { border-radius: 0 0 8px 8px; }
+.tema-box .uk-accordion-title::before { background-color: var(--tema-farg) !important; } /* !important: plusboxens svarta ikon ovan */
+.tema-box .uk-accordion-content .uk-button { margin-top: 4px; }
+
+/* --- Hero (som hållbar omställning): textrutan med rundade hörn och tydlig ingress. --- */
+.tema-sida .tema-hero-kort { border-radius: 8px; }
