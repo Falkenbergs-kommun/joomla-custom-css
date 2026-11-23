@@ -692,7 +692,8 @@ a[href^="mailto:"] {
 
 /* --- Knappar (hopprad och knappar i rutor) --- */
 .tema-sida :is(.tema-hopp, .tema-knappar) .uk-button,
-.tema-box .el-link.uk-button {
+.tema-box .el-link.uk-button,
+.tema-box .fbg-ev-more .uk-button {
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -714,7 +715,8 @@ a[href^="mailto:"] {
     white-space: normal;
 }
 .tema-sida :is(.tema-hopp, .tema-knappar) .uk-button:hover,
-.tema-box .el-link.uk-button:hover {
+.tema-box .el-link.uk-button:hover,
+.tema-box .fbg-ev-more .uk-button:hover {
     background: var(--tema-ljus, #EAF0FB);
     color: #1F1F1F;
     text-decoration: underline;
@@ -722,6 +724,7 @@ a[href^="mailto:"] {
 .tema-sida :is(.tema-hopp, .tema-knappar) .uk-button [uk-icon] { color: var(--tema-farg, #1F4E99); flex: none; margin: 0 !important; } /* !important: YOOthemes uk-margin-small-right, gap ger avståndet */
 /* Ensam knapp (panelens knapp, knapp i plusbox): bara så bred som texten. */
 .tema-box .el-link.uk-button,
+.tema-box .fbg-ev-more .uk-button,
 .tema-sida p.tema-knappar .uk-button { display: inline-flex; width: auto; }
 /* YOOthemes knappgrid: en knapp per rad på mobil (kravspec 28), lika breda på rad från 960 px. */
 .tema-sida :is(.tema-hopp, .tema-knappar) .uk-grid > * { width: 100%; }
@@ -783,6 +786,13 @@ a[href^="mailto:"] {
     mask: url("/media/yooessentials/icons/heroicons/outline/external-link.svg") no-repeat 50% 50% / 100%;
 }
 .tema-sida .uk-button[href^="http"]:not([href*="//kommun.falkenberg.se"])::after { margin-left: auto; }
+/* I länklistor: ikonen tar ingen plats i radflödet (absolut på sin naturliga plats) och får luft via padding,
+   så att den aldrig hamnar ensam på en ny rad. */
+.tema-lanklista ul > li > a[href^="http"]:not([href*="//kommun.falkenberg.se"]) { padding-right: 1.2em; }
+.tema-lanklista ul > li > a[href^="http"]:not([href*="//kommun.falkenberg.se"])::after { position: absolute; margin-top: 0.3em; }
+
+/* Evenemangskort i en ruta: kant och rundning som rutorna, så att korten syns mot den vita bakgrunden. */
+.tema-box .mod-fbg-evenemang .el-item { border: 1px solid #D3D8E2; border-radius: 8px; overflow: hidden; }
 
 /* --- Plusbox i rutan (kravspec 6, 7): rundade hörn och fokusring; rutan växer på höjden när den öppnas. --- */
 .tema-box .uk-accordion > * + * { margin-top: 10px; }
