@@ -650,7 +650,12 @@ a[href^="mailto:"] {
    - .tema-hopp      knappraden "Vad vill du hitta på sidan?" (ankarlänkar, färg per mål i ordning).
    - .tema-knappar   knappar i en ruta: hela bredden på mobil, lika breda på rad från 960 px (-3 = tre per rad).
    - .tema-lanklista länklista med pil före länken; externa länkar får ikon efter (kravspec 22).
+   - .tema-yta   färgyta på en kolumn (Kolumn > Avancerat > Klass), se FÄRGYTOR nedan. Ersätter rutor i rutor
+                 (inspel från kommunikation 2026-11-23, som Campus Falkenberg): 50/50 eller hel bredd.
+   - .tema-del   Sublayout som håller ihop en dels ikon, rubrik, text och plusboxar (ingen egen stil).
+   - .tema-puff  vit puff med rundade hörn inuti en färgyta (Upptäck Kulturskolan).
    Plusboxen är det vanliga JP-elementet "050 Plusbox" med stilen UIkit; här får den bara rundning och fokus. */
+.tema-sida { --tema-farg: #1F4E99; --tema-ljus: #EAF0FB; }
 .tema-box {
     --tema-farg: #1F4E99;
     --tema-ljus: #EAF0FB;
@@ -678,11 +683,11 @@ a[href^="mailto:"] {
 
 /* Ikoner i rutan i rutans färg. YOOessentials-ikonerna (heroicons) har hårdkodad stroke="#4A5568";
    currentColor gör att de följer color. */
-.tema-box .el-image[uk-icon],
-.tema-box .uk-icon.el-image { color: var(--tema-farg) !important; } /* !important: panelens uk-text-emphasis sätter färgen */
+.tema-sida .el-image[uk-icon],
+.tema-sida .uk-icon.el-image { color: var(--tema-farg) !important; } /* !important: panelens uk-text-emphasis sätter färgen */
 .tema-sida [uk-icon] svg [stroke]:not([stroke="none"]) { stroke: currentColor; }
 .tema-sida [uk-icon] svg [fill]:not([fill="none"]) { fill: currentColor; }
-.tema-box .el-title { text-wrap: balance; }
+.tema-sida .el-title { text-wrap: balance; }
 
 /* Fokus och hover (kravspec 25): profilens fokusring, 3 px Kommunblå med luft, i stället för temats prickade 2 px. */
 .tema-sida :focus-visible {
@@ -692,8 +697,8 @@ a[href^="mailto:"] {
 
 /* --- Knappar (hopprad och knappar i rutor) --- */
 .tema-sida :is(.tema-hopp, .tema-knappar) .uk-button,
-.tema-box .el-link.uk-button,
-.tema-box .fbg-ev-more .uk-button {
+.tema-sida .el-link.uk-button,
+.tema-sida .fbg-ev-more .uk-button {
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -715,16 +720,16 @@ a[href^="mailto:"] {
     white-space: normal;
 }
 .tema-sida :is(.tema-hopp, .tema-knappar) .uk-button:hover,
-.tema-box .el-link.uk-button:hover,
-.tema-box .fbg-ev-more .uk-button:hover {
+.tema-sida .el-link.uk-button:hover,
+.tema-sida .fbg-ev-more .uk-button:hover {
     background: var(--tema-ljus, #EAF0FB);
     color: #1F1F1F;
     text-decoration: underline;
 }
 .tema-sida :is(.tema-hopp, .tema-knappar) .uk-button [uk-icon] { color: var(--tema-farg, #1F4E99); flex: none; margin: 0 !important; } /* !important: YOOthemes uk-margin-small-right, gap ger avståndet */
 /* Ensam knapp (panelens knapp, knapp i plusbox): bara så bred som texten. */
-.tema-box .el-link.uk-button,
-.tema-box .fbg-ev-more .uk-button,
+.tema-sida .el-link.uk-button,
+.tema-sida .fbg-ev-more .uk-button,
 .tema-sida p.tema-knappar .uk-button { display: inline-flex; width: auto; }
 /* YOOthemes knappgrid: en knapp per rad på mobil (kravspec 28), lika breda på rad från 960 px. */
 .tema-sida :is(.tema-hopp, .tema-knappar) .uk-grid > * { width: 100%; }
@@ -735,11 +740,6 @@ a[href^="mailto:"] {
     .tema-sida :is(.tema-hopp, .tema-knappar) .uk-grid > * { width: auto; flex: 1 1 0; min-width: 0; }
     .tema-sida .tema-knappar-3 .uk-grid > * { flex: 0 0 33.333%; }
 }
-/* Hoppraden: varje knapp i samma färg som rutan den leder till. */
-.tema-hopp .uk-grid > :nth-child(1) { --tema-farg: #1F4E99; --tema-ljus: #EAF0FB; }
-.tema-hopp .uk-grid > :nth-child(2) { --tema-farg: #AB0D1F; --tema-ljus: #FBEDEE; }
-.tema-hopp .uk-grid > :nth-child(3) { --tema-farg: #0F8C9D; --tema-ljus: #E7F4F5; }
-.tema-hopp .uk-grid > :nth-child(4) { --tema-farg: #3D405B; --tema-ljus: #EFEFF3; }
 
 /* --- Länklistor (kravspec 21, 22, 26): pilen är en del av länken, minst 24 px hög klickyta, luft mellan länkarna. --- */
 .tema-lanklista ul {
@@ -792,11 +792,11 @@ a[href^="mailto:"] {
 .tema-lanklista ul > li > a[href^="http"]:not([href*="//kommun.falkenberg.se"])::after { position: absolute; margin-top: 0.3em; }
 
 /* Evenemangskort i en ruta: kant och rundning som rutorna, så att korten syns mot den vita bakgrunden. */
-.tema-box .mod-fbg-evenemang .el-item { border: 1px solid #D3D8E2; border-radius: 8px; overflow: hidden; }
+.tema-sida .mod-fbg-evenemang .el-item { border: 1px solid #D3D8E2; border-radius: 8px; overflow: hidden; }
 
 /* --- Plusbox i rutan (kravspec 6, 7): rundade hörn och fokusring; rutan växer på höjden när den öppnas. --- */
-.tema-box .uk-accordion > * + * { margin-top: 10px; }
-.tema-box .uk-accordion-title {
+.tema-sida .uk-accordion > * + * { margin-top: 10px; }
+.tema-sida .uk-accordion-title {
     border-radius: 8px;
     background-color: #fff;
     font-family: 'Lato', Arial, Helvetica, sans-serif;
@@ -804,11 +804,80 @@ a[href^="mailto:"] {
     font-size: 18px;
     letter-spacing: normal;
 }
-.tema-box .uk-accordion-title :is(h2, h3, h4) { font-family: inherit; font-weight: inherit; font-size: inherit; letter-spacing: inherit; line-height: 1.35; padding-left: 0 !important; } /* !important: theme.12.css .uk-accordion-title h3 */
-.tema-box .uk-open > .uk-accordion-title { border-radius: 8px 8px 0 0; background-color: var(--tema-ljus); }
-.tema-box .uk-accordion-content { border-radius: 0 0 8px 8px; }
-.tema-box .uk-accordion-title::before { background-color: var(--tema-farg) !important; } /* !important: plusboxens svarta ikon ovan */
-.tema-box .uk-accordion-content .uk-button { margin-top: 4px; }
+.tema-sida .uk-accordion-title :is(h2, h3, h4) { font-family: inherit; font-weight: inherit; font-size: inherit; letter-spacing: inherit; line-height: 1.35; padding-left: 0 !important; } /* !important: theme.12.css .uk-accordion-title h3 */
+.tema-sida .uk-open > .uk-accordion-title { border-radius: 8px 8px 0 0; background-color: var(--tema-ljus); }
+.tema-sida .uk-accordion-content { border-radius: 0 0 8px 8px; }
+.tema-sida .uk-accordion-title::before { background-color: var(--tema-farg) !important; } /* !important: plusboxens svarta ikon ovan */
+.tema-sida .uk-accordion-content .uk-button { margin-top: 4px; }
 
 /* --- Hero (som hållbar omställning): textrutan med rundade hörn och tydlig ingress. --- */
 .tema-sida .tema-hero-kort { border-radius: 8px; }
+
+/* === TEMASIDA: FÄRGYTOR (.tema-yta) ===
+   Profilfärger med text i Mörk marin (ljusa ytor) eller vitt (Mörk marin). Kontrast mot texten:
+   Pion 9,8:1, Himmelsblå 9,6:1, Blåstång 8,9:1, Ingefära 13:1, vitt på Mörk marin 17,5:1.
+   Kommunblå länkar klarar inte 4,5:1 på Pion/Himmelsblå, därför tar länkarna textfärgen (--yta-text).
+   Plusboxarnas öppna innehåll har vit bakgrund och vanliga blå länkar. */
+.tema-yta {
+    --yta-bg: #fff;
+    --yta-text: #13153B;
+    --tema-farg: #13153B;
+    --tema-ljus: #fff;
+    background: var(--yta-bg);
+    color: var(--yta-text);
+    padding: 32px 24px !important; /* !important: kolumnernas gutter-padding från uk-grid */
+    box-sizing: border-box;
+    scroll-margin-top: 24px;
+}
+@media (min-width: 960px) {
+    .tema-yta { padding: 48px !important; }
+}
+.tema-yta.tema-pion       { --yta-bg: #F4A9AF; }
+.tema-yta.tema-himmelsbla { --yta-bg: #86CEDF; }
+.tema-yta.tema-blastang   { --yta-bg: #77BFB3; }
+.tema-yta.tema-ingefara   { --yta-bg: #EBE24E; }
+.tema-yta.tema-marin      { --yta-bg: #13153B; --yta-text: #fff; --tema-farg: #fff; }
+/* Rubriker och brödtext i ytans textfärg (temat sätter egen färg på rubriker). */
+.tema-yta :is(h1, h2, h3, h4, .uk-h3, .uk-h4, .el-title, .el-content, p, li) { color: var(--yta-text); }
+/* !important: brödtextlistornas länkregel (LISTOR I BRÖDTEXT) har två id i specificiteten
+   (#tm-main och :not(#cludo-search-results *)). */
+#tm-main .tema-yta .tema-lanklista ul > li > a { color: var(--yta-text) !important; }
+/* Plusboxar på färgyta: vit rubrikrad och vitt innehåll, mörk text och Kommunblå länkar som vanligt. */
+.tema-yta .uk-accordion-title { border-color: transparent !important; } /* !important: plusboxens kantlinje ovan */
+.tema-yta .uk-accordion-title,
+.tema-yta .uk-accordion-title :is(h2, h3, h4) { color: #1F1F1F; }
+.tema-yta .uk-open > .uk-accordion-title { background-color: #fff; border-bottom-color: #D3D8E2 !important; }
+.tema-yta .uk-accordion-title::before { background-color: #13153B !important; }
+.tema-yta .uk-accordion-content { background: #fff; border-color: transparent !important; }
+.tema-yta .uk-accordion-content :is(p, li) { color: #1F1F1F; }
+.tema-yta .uk-accordion-content .tema-knappar .uk-button { --tema-farg: #13153B; }
+#tm-main .tema-yta .uk-accordion-content ul > li > a { color: #1F4E99 !important; } /* !important: se ovan */
+/* Fokus syns mot alla ytor: vit ring på Mörk marin. */
+.tema-sida .tema-marin :focus-visible:not(.uk-accordion-content *) { outline-color: #fff !important; } /* !important: temasidans fokusregel */
+/* Vit puff i en färgyta (Upptäck Kulturskolan). */
+.tema-puff {
+    background: #fff;
+    border-radius: 8px;
+    padding: 24px;
+    margin-top: 40px !important; /* !important: uk-margin på Sublayout */
+    --yta-text: #1F1F1F;
+    --tema-farg: #13153B;
+}
+.tema-puff :is(h2, h3, .el-title, p, .el-content) { color: #1F1F1F; }
+/* Delarna i den vita Förskola och skola-ytan skiljs med luft, inte ramar. */
+.tema-del + .tema-del { margin-top: 40px; }
+/* Evenemangskorten på Ingefära: vita kort; knappar och prickar i Mörk marin. */
+.tema-yta .mod-fbg-evenemang .el-item { border-color: transparent; }
+.tema-yta .mod-fbg-evenemang .el-item :is(h3, p, .el-meta, .el-title) { color: #1F1F1F; }
+.tema-yta .mod-fbg-evenemang .el-title a { color: #1F1F1F; }
+.tema-yta .fbg-ev-slidenav { border-color: #13153B; }
+/* Hoppraden: knappen fylld med färgen på ytan den leder till. Vit yta (Förskola och skola) får marinblå kant. */
+.tema-hopp .uk-grid > * .uk-button { border-color: #13153B; }
+.tema-hopp .uk-grid > :nth-child(1) { --tema-farg: #13153B; --tema-ljus: #F4A9AF; }
+.tema-hopp .uk-grid > :nth-child(2) { --tema-farg: #13153B; --tema-ljus: #86CEDF; }
+.tema-hopp .uk-grid > :nth-child(3) { --tema-farg: #13153B; --tema-ljus: #fff; }
+.tema-hopp .uk-grid > :nth-child(4) { --tema-farg: #13153B; --tema-ljus: #13153B; }
+.tema-sida .tema-hopp .uk-grid > * .uk-button { background: var(--tema-ljus); }
+.tema-sida .tema-hopp .uk-grid > :nth-child(4) .uk-button { color: #fff; }
+.tema-sida .tema-hopp .uk-grid > :nth-child(4) .uk-button [uk-icon] { color: #fff; }
+.tema-sida .tema-hopp .uk-grid > * .uk-button:hover { background: var(--tema-ljus); text-decoration-thickness: 2px; }
