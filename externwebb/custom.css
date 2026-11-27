@@ -289,6 +289,21 @@ background-color: #000 !important;
 }
 
 /* AI-sammanfattning: ingen versal på varje ord i rubriken, samma typsnitt som sajten */
+/* AI-rutan tar sin slutliga höjd direkt (2026-11-27). Cludo strömmar in svaret ord för ord, så rutan växte i sex steg
+   (72 → 220 px) och sköt ned träfflistan, fast texten ändå kapas vid fyra rader (Cludos egen max-height: 4lh) med
+   "Visa mer" under. Sluthöjden i hopfällt läge reserveras därför från laddningsläget: 4 rader + knappraden (44 + 8 px)
+   + rutans padding (2 × 20 px) = 4lh + 92px. 207px är reserven för webbläsare utan enheten lh.
+   Ett svar kortare än fyra rader ger lite tom yta nederst i rutan; "Visa mer" fäller ut som förut. */
+#cludo-generative-ai {
+    box-sizing: border-box;
+    min-height: 207px;
+    min-height: calc(4lh + 92px);
+}
+
+#cludo-generative-ai .cludo_expandable-content {
+    min-height: 4lh;
+}
+
 #cludo-search-results .cludo-ai-summary .cludo-generative-ai__header {
     text-transform: none;
     font-family: Montserrat, Lato, sans-serif;
