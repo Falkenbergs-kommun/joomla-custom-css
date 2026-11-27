@@ -753,6 +753,9 @@ a[href^="mailto:"] {
 }
 @media (min-width: 960px) {
     .tema-sida :is(.tema-hopp, .tema-knappar) .uk-grid > * { width: auto; flex: 1 1 0; min-width: 0; }
+    /* Knapprad utan fast antal per rad: bredden utgår från texten och resten av raden delas lika, så att en lång
+       knapptext (Ändra inkomstuppgifter) får plats på en rad i stället för att brytas. Hoppraden har lika breda. */
+    .tema-sida .tema-knappar:not(.tema-knappar-3) .uk-grid > * { flex: 1 1 auto; }
     .tema-sida .tema-knappar-3 .uk-grid > * { flex: 0 0 33.333%; }
     /* Hoppraden på rad: mer luft mellan knapparna (24 px i stället för uk-grid-smalls 15 px). */
     .tema-sida .tema-hopp .uk-grid { margin-left: -24px; }
