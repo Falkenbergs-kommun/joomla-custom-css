@@ -881,15 +881,15 @@ a[href^="mailto:"] {
 .tema-yta.tema-blastang   { --yta-bg: #77BFB3; }
 .tema-yta.tema-ingefara   { --yta-bg: #EBE24E; }
 .tema-yta.tema-marin      { --yta-bg: #13153B; --yta-text: #fff; --tema-farg: #fff; }
-/* Ljusblå (ljus Kommunblå, samma som --tema-ljus): lugn yta för t.ex. Populära sidor. Kommunblå länkar, kanter
-   och ikoner som på vit botten (7:1 mot ytan). */
-.tema-yta.tema-ljusbla    { --yta-bg: #EAF0FB; --tema-farg: #1F4E99; }
+/* Varmgrå (ljus, varm neutral): lugn yta för t.ex. Populära sidor. Kommunblå länkar, kanter och ikoner som
+   på vit botten (7:1 mot ytan). */
+.tema-yta.tema-varmgra    { --yta-bg: #F2EFEA; --tema-farg: #1F4E99; }
 /* Rubriker och brödtext i ytans textfärg (temat sätter egen färg på rubriker). */
 .tema-yta :is(h1, h2, h3, h4, .uk-h3, .uk-h4, .el-title, .el-content, p, li) { color: var(--yta-text); }
 /* !important: brödtextlistornas länkregel (LISTOR I BRÖDTEXT) har två id i specificiteten
    (#tm-main och :not(#cludo-search-results *)). */
 #tm-main .tema-yta .tema-lanklista ul > li > a { color: var(--yta-text) !important; }
-#tm-main .tema-yta.tema-ljusbla .tema-lanklista ul > li > a { color: #1F4E99 !important; } /* !important: raden ovan */
+#tm-main .tema-yta.tema-varmgra .tema-lanklista ul > li > a { color: #1F4E99 !important; } /* !important: raden ovan */
 /* Plusboxar på färgyta: vit rubrikrad och vitt innehåll, mörk text och Kommunblå länkar som vanligt. */
 .tema-yta .uk-accordion-title { border-color: transparent !important; } /* !important: plusboxens kantlinje ovan */
 .tema-yta .uk-accordion-title,
