@@ -847,16 +847,22 @@ a[href^="mailto:"] {
 @media (min-width: 960px) {
     .tema-yta { padding: 48px !important; }
 }
-/* Färgen fyller skärmens bredd medan innehållet står kvar i spalten: skuggan målar färgen utanför kolumnen
-   och clip-path sparar bara den vågräta delen (skuggor ger ingen vågrät rullning). I en 50/50-rad blöder
-   vänster yta bara åt vänster och höger yta bara åt höger; staplade (under 960 px) åt båda håll. */
+/* Ytans innehåll linjerar med sidans spalt (hoppknapparna ovanför och innehållet nedanför): ytterkanten har
+   ingen innerluft, i stället målas färgen lika långt utanför spalten (--yta-ut) med en skugga som clip-path
+   begränsar till den vågräta delen. Skuggor ger ingen vågrät rullning, så på smalare skärmar än spalten +
+   2 × --yta-ut når färgen bara skärmkanten. I en 50/50-rad gäller det vänster ytas vänsterkant och höger
+   ytas högerkant; staplade (under 960 px) och på hel bredd båda kanterna. */
 .tema-yta {
-    box-shadow: 0 0 0 100vmax var(--yta-bg);
-    clip-path: inset(0 -100vmax);
+    --yta-ut: 24px;
+    padding-left: 0 !important;  /* !important: som padding ovan */
+    padding-right: 0 !important;
+    box-shadow: 0 0 0 var(--yta-ut) var(--yta-bg);
+    clip-path: inset(0 calc(-1 * var(--yta-ut)));
 }
 @media (min-width: 960px) {
-    .tema-yta[class*="uk-width-1-2@m"]:first-child { clip-path: inset(0 0 0 -100vmax); }
-    .tema-yta[class*="uk-width-1-2@m"]:last-child  { clip-path: inset(0 -100vmax 0 0); }
+    .tema-yta { --yta-ut: 48px; }
+    .tema-yta[class*="uk-width-1-2@m"]:first-child { padding-right: var(--yta-ut) !important; clip-path: inset(0 0 0 calc(-1 * var(--yta-ut))); }
+    .tema-yta[class*="uk-width-1-2@m"]:last-child  { padding-left: var(--yta-ut) !important; clip-path: inset(0 calc(-1 * var(--yta-ut)) 0 0); }
 }
 .tema-yta.tema-pion       { --yta-bg: #F4A9AF; }
 .tema-yta.tema-himmelsbla { --yta-bg: #86CEDF; }
