@@ -664,6 +664,7 @@ a[href^="mailto:"] {
    - .tema-lika      på en rad (Rad > Avancerat > Klass): sista rutan i varje kolumn sträcks så att rutorna blir lika höga.
    - .tema-hopp      knappraden "Vad vill du hitta på sidan?" (ankarlänkar, färg per mål i ordning).
    - .tema-knappar   knappar i en ruta: hela bredden på mobil, lika breda på rad från 960 px (-3 = tre per rad).
+                     .tema-fyllda bredvid ger Kommunblå knappar med vit text.
    - .tema-lanklista länklista med pil före länken; externa länkar får ikon efter (kravspec 22).
    - .tema-yta   färgyta på en kolumn (Kolumn > Avancerat > Klass), se FÄRGYTOR nedan. Ersätter rutor i rutor
                  (inspel från kommunikation 2026-11-23, som Campus Falkenberg): 50/50 eller hel bredd.
@@ -742,6 +743,11 @@ a[href^="mailto:"] {
     text-decoration: underline;
 }
 .tema-sida :is(.tema-hopp, .tema-knappar) .uk-button [uk-icon] { color: var(--tema-farg, #1F4E99); flex: none; margin: 0 !important; } /* !important: YOOthemes uk-margin-small-right, gap ger avståndet */
+/* Fyllda knappar (.tema-fyllda bredvid .tema-knappar, t.ex. Populära sidor): Kommunblå med vit text och vita
+   ikoner (8,2:1). Hover mörkare blå i stället för ljus bakgrund, så att den vita texten syns. */
+.tema-sida .tema-knappar.tema-fyllda .uk-button { background: #1F4E99; border-color: #1F4E99; color: #fff; }
+.tema-sida .tema-knappar.tema-fyllda .uk-button [uk-icon] { color: #fff; }
+.tema-sida .tema-knappar.tema-fyllda .uk-button:hover { background: #173B75; border-color: #173B75; color: #fff; }
 /* Ensam knapp (panelens knapp, knapp i plusbox): bara så bred som texten. */
 .tema-sida .el-link.uk-button,
 .tema-sida .fbg-ev-more .uk-button,
