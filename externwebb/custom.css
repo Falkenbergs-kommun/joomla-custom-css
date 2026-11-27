@@ -847,6 +847,17 @@ a[href^="mailto:"] {
 @media (min-width: 960px) {
     .tema-yta { padding: 48px !important; }
 }
+/* Färgen fyller skärmens bredd medan innehållet står kvar i spalten: skuggan målar färgen utanför kolumnen
+   och clip-path sparar bara den vågräta delen (skuggor ger ingen vågrät rullning). I en 50/50-rad blöder
+   vänster yta bara åt vänster och höger yta bara åt höger; staplade (under 960 px) åt båda håll. */
+.tema-yta {
+    box-shadow: 0 0 0 100vmax var(--yta-bg);
+    clip-path: inset(0 -100vmax);
+}
+@media (min-width: 960px) {
+    .tema-yta[class*="uk-width-1-2@m"]:first-child { clip-path: inset(0 0 0 -100vmax); }
+    .tema-yta[class*="uk-width-1-2@m"]:last-child  { clip-path: inset(0 -100vmax 0 0); }
+}
 .tema-yta.tema-pion       { --yta-bg: #F4A9AF; }
 .tema-yta.tema-himmelsbla { --yta-bg: #86CEDF; }
 .tema-yta.tema-blastang   { --yta-bg: #77BFB3; }
