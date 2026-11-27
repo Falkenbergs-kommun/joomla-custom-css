@@ -816,7 +816,7 @@ a[href^="mailto:"] {
     background-color: #fff;
     font-family: 'Lato', Arial, Helvetica, sans-serif;
     font-weight: 700;
-    font-size: 18px;
+    font-size: inherit; /* samma storlek som brödtexten (20 px, 18 px under typsnittsbrytpunkten) */
     letter-spacing: normal;
 }
 .tema-sida .uk-accordion-title :is(h2, h3, h4) { font-family: inherit; font-weight: inherit; font-size: inherit; letter-spacing: inherit; line-height: 1.35; padding-left: 0 !important; } /* !important: theme.12.css .uk-accordion-title h3 */
