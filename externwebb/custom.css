@@ -754,6 +754,15 @@ a[href^="mailto:"] {
 @media (min-width: 960px) {
     .tema-sida :is(.tema-hopp, .tema-knappar) .uk-grid > * { width: auto; flex: 1 1 0; min-width: 0; }
     .tema-sida .tema-knappar-3 .uk-grid > * { flex: 0 0 33.333%; }
+    /* Hoppraden på rad: mer luft mellan knapparna (24 px i stället för uk-grid-smalls 15 px). */
+    .tema-sida .tema-hopp .uk-grid { margin-left: -24px; }
+    .tema-sida .tema-hopp .uk-grid > * { padding-left: 24px; }
+}
+/* Hoppraden är lika bred som färgytorna under (spalten + 48 px på var sida, se --yta-ut i FÄRGYTOR) när
+   skärmen rymmer det: spalt 1200 + 2 × 48 + rullningslist. Smalare än så står knapparna kvar i spalten,
+   eftersom färgen då når skärmkanten och knappar inte ska göra det. */
+@media (min-width: 1320px) {
+    .tema-sida .tema-hopp { margin-left: -48px; margin-right: -48px; }
 }
 
 /* --- Länklistor (kravspec 21, 22, 26): pilen är en del av länken, minst 24 px hög klickyta, luft mellan länkarna. --- */
