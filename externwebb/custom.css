@@ -726,7 +726,7 @@ a[href^="mailto:"] {
     background: #fff;
     color: #1F1F1F;
     border: 2px solid var(--tema-farg, #1F4E99);
-    border-radius: 8px;
+    border-radius: 30px; /* helt rundade ändar på enradiga knappar (48 px höga) */
     font-family: 'Lato', Arial, Helvetica, sans-serif;
     font-weight: 700;
     font-size: inherit; /* som brödtexten: 20 px, 18 px under typsnittsbrytpunkten */
@@ -848,6 +848,11 @@ a[href^="mailto:"] {
 
 /* --- Hero (som hållbar omställning): textrutan med rundade hörn och tydlig ingress. --- */
 .tema-sida .tema-hero-kort { border-radius: 8px; }
+/* Som hoppraden: när skärmen rymmer det går kortets kant i linje med färgytorna (48 px utanför spalten) och
+   kortets text i linje med rubrikerna i spalten. */
+@media (min-width: 1320px) {
+    .tema-sida .tema-hero-kort { margin-left: -48px; padding-left: 48px; }
+}
 
 /* === TEMASIDA: FÄRGYTOR (.tema-yta) ===
    Profilfärger med text i Mörk marin (ljusa ytor) eller vitt (Mörk marin). Kontrast mot texten:
@@ -921,19 +926,21 @@ a[href^="mailto:"] {
     --tema-farg: #13153B;
 }
 .tema-puff :is(h2, h3, .el-title, p, .el-content) { color: #1F1F1F; }
-/* Puffen är uppbyggd som ett evenemangskort (mod_fbg_evenemang): bilden (.tema-puff-bild) fyller ut upptill,
-   ikonen sitter i en cirkel som överlappar bildens nederkant (samma mått som datumbrickan) och texten
-   (.tema-puff-text) har kortets luft. Ikonen flyttas med top i stället för marginal, eftersom
-   uk-margin-remove-first-child nollar marginalen med !important. */
+/* Puffen är uppbyggd som ett evenemangskort (mod_fbg_evenemang): bilden (.tema-puff-bild) fyller ut upptill
+   och texten (.tema-puff-text) har kortets luft. Den genomskinliga kanten ger samma tunna vita linje runt
+   bilden som korten har (puffens vita bakgrund syns under kanten). Med ikon i panelen sitter den i en cirkel
+   som överlappar bildens nederkant, med datumbrickans mått; den flyttas med top i stället för marginal,
+   eftersom uk-margin-remove-first-child nollar marginalen med !important. */
+.tema-puff { border: 1px solid transparent; }
 .tema-puff-bild img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; }
-.tema-puff-text { padding: 0 20px 20px; }
+.tema-puff-text { padding: 20px; }
 .tema-puff-text > .el-image {
-    position: relative; top: -28px; margin-bottom: -28px; left: 0;
+    position: relative; top: -48px; margin-bottom: -48px; left: 0;
     display: flex; align-items: center; justify-content: center;
     width: 56px; height: 56px; box-sizing: border-box; border-radius: 50%;
     background: #fff; border: 2px solid var(--tema-farg);
 }
-.tema-puff-text > .el-title { margin-top: 12px !important; } /* !important: uk-margin-top; 40 px från bilden som i kortet */
+.tema-puff-text > .el-image + .el-title { margin-top: 12px !important; } /* !important: uk-margin-top; 40 px från bilden som i kortet */
 /* Delarna i den vita Förskola och skola-ytan skiljs med luft, inte ramar. */
 .tema-del + .tema-del { margin-top: 40px; }
 /* Evenemangskorten på Ingefära: vita kort; knappar och prickar i Mörk marin. */
